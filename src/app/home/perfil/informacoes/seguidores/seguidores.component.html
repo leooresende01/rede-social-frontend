@@ -1,0 +1,25 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" #modal>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header header-modal-align">
+				<h1 class="fs-5 centralizado" id="exampleModalLabel">Seguidores</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #btnClose></button>
+			</div>
+			<div class="modal-body tamanho-maximo">
+				<rs-home-shared-spinnerloading [elementoAguardado]="seguidores"></rs-home-shared-spinnerloading>
+				<div *ngFor="let seguidor of seguidores" class="seguidores">
+					<div class="seguidor-info clicavel" (click)="irParaOPerfilDoUsuario(seguidor.username)">
+						<img class="img-perfil" (error)="errorImage($event)"
+							src="{{urlApi}}/api/v1/usuarios/{{seguidor.username}}/imagemDoPerfil">
+						<div class="info-user">
+							<p class="seguidores-username">{{ seguidor.username }}</p>
+							<p class="menor">{{ seguidor.nomeCompleto | formatarNomeDoUsuario }}</p>
+						</div>
+					</div>
+					<rs-home-perfil-informacoes-botoesseguir [usuario]="seguidor"
+						[usernameUsuarioAutenticado]="usernameUsuarioAutenticado"></rs-home-perfil-informacoes-botoesseguir>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

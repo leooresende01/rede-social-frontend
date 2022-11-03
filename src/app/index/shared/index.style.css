@@ -1,0 +1,161 @@
+.section-login {
+	padding: 50px 33vw;
+}
+
+.card {
+	border: 1px solid var(--cor-de-fundo);
+	background-color: white;
+}
+
+.card-login {
+	padding: 20px 4vw;
+}
+
+.card-login>h1 {
+	padding: 30px 0;
+	font-family: unset, sans-serif;
+	font-size: 45px;
+	text-align: center;
+}
+
+.form-login {
+	padding-top: 30px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.fildset {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+.mesmo-lugar-grid {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.place-holder-top {
+	font-size: 12px;
+	margin-top: 3px;
+	margin-left: 10px;
+}
+
+.form-input {
+	background-color: #e9e9e957;
+	outline: none;
+	border: 1px solid var(--cor-de-fundo);
+	padding: 17px 5px 5px 10px;
+	border-radius: 4px;
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.form-input:focus {
+	border-color: black;
+}
+
+.form-input::placeholder {
+	font-size: 14px;
+}
+
+.form-submit {
+	background-color: #0095f6;
+	color: white;
+	border: none;
+	transition: 300ms;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+.form-submit:hover {
+	background-color: #0069af;
+}
+
+.form-submit:disabled {
+	cursor: default;
+	background-color: #0094f69a;
+}
+
+.create-div-ou {
+	margin: 25px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 5px;
+}
+
+.create-div-ou>div {
+	background-color: rgba(0, 0, 0, 0.336);
+	height: 1px;
+	width: 100%;
+}
+
+.create-div-ou>p {
+	padding: 0 10px;
+}
+
+.alinhado-centro {
+	display: block;
+	text-align: center;
+}
+
+.sem-decoracao {
+	text-decoration: none;
+}
+
+.sem-decoracao:hover {
+	text-decoration: underline;
+}
+
+.card-criar-conta {
+	margin-top: 20px;
+	padding: 20px 25px;
+}
+
+.form-control:focus {
+	box-shadow: inset 0 1px 1px rgba(33, 36, 218, 0.075), 0 0 3px rgba(255, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 1024px) {
+	.section-login {
+		padding: 50px 26vw;
+	}
+}
+
+@media screen and (max-width: 754px) {
+	.section-login {
+		padding: 50px 18vw;
+	}
+
+	.alinhado-centro {
+		font-size: 13px;
+	}
+
+	.form-submit {
+		padding: 8px 0;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.section-login {
+		padding: 50px 9vw;
+	}
+	
+	.card-login > h1 {
+		font-size: 35px;
+	}
+
+	.place-holder-top {
+		font-size: 10px;
+	}
+
+	.form-input::placeholder {
+		font-size: 12px;
+	}
+
+	.form-submit {
+		padding: 10px 0;
+	}
+}

@@ -1,0 +1,29 @@
+<header>
+	<div class="home-header">
+		<h1 class="header-espaco-interno">Rede social</h1>
+		<div class="header-espaco-interno find-user-field">
+			<form [formGroup]="formGroup">
+				<input formControlName="query" (blur)="ocultarMenuQuery()" (focus)="elementActive = true"
+					class="form-search" placeholder="Pesquisar usuarios" type="search" #inputQueryUser>
+			</form>
+			<rs-home-finduser [formGroup]="formGroup" [usuariosConsulta]="usuariosConsulta$ | async"
+				*ngIf="elementActive && !formGroup.get('query')?.hasError('required')"></rs-home-finduser>
+		</div>
+		<nav class="header-espaco-interno home-header-nav">
+			<img *ngIf="url === '/home'; else imagemAlternativa" class="icon-nav clicavel" routerLink="/home"
+				src="https://cdn1.iconfinder.com/data/icons/material-core/20/home-256.png">
+			<ng-template #imagemAlternativa><img class="icon-nav clicavel" routerLink="/home"
+					src="https://cdn2.iconfinder.com/data/icons/app-user-interface-6/48/Home_Alt-256.png">
+			</ng-template>
+			<img data-bs-toggle="modal" data-bs-target="#novaPublicacaoModal" class="icon-nav clicavel"
+				src="https://cdn2.iconfinder.com/data/icons/boxicons-regular-vol-1/24/bx-add-to-queue-256.png">
+			<div class="dropdown-center">
+				<img data-bs-toggle="dropdown" aria-expanded="false" (error)="errorImage($event)" class="img-perfil-link icon-nav clicavel"
+					src="{{urlApi}}/api/v1/usuarios/{{usernameUsuarioAutenticado}}/imagemDoPerfil">
+				<rs-home-header-useroptions [usernameUsuarioAutenticado]="usernameUsuarioAutenticado">
+				</rs-home-header-useroptions>
+			</div>
+		</nav>
+	</div>
+</header>
+<rs-home-newpublicacao></rs-home-newpublicacao>

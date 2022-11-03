@@ -1,0 +1,6 @@
+<img (click)="curtirPublicacao($event, publicacao.id, publicacao.dono)" *ngIf="!publicacao.usuarioAutenticadoCurtiu"
+	class="icon-info-publicacao clicavel"
+	src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/heart-64.png">
+<img (click)="descurtirPublicacao($event, publicacao.id, publicacao.dono)" *ngIf="publicacao.usuarioAutenticadoCurtiu"
+	class="icon-info-publicacao clicavel"
+	src="https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png">

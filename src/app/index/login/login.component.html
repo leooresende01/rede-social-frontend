@@ -1,0 +1,39 @@
+<section class="section-login">
+	<div class="card card-login">
+		<h1>Rede social</h1>
+		<form [formGroup]="form" class="form-login" (submit)="autenticarUsuario()">
+			<fieldset class="input-group has-validation">
+				<span class="input-group-text">@</span>
+				<div [ngClass]="{'is-invalid': form.get('username')?.errors && submitedForm }" class="form-floating">
+					<input focus id="inputUsername"
+						[ngClass]="{'is-invalid': form.get('username')?.errors && submitedForm, 'is-valid': !form.get('username')?.errors && submitedForm }"
+						formControlName="username" type="text" class="form-control" id="username" placeholder="username"
+						required>
+					<label for="username">Nome de usuário</label>
+				</div>
+			</fieldset>
+			<rs-index-signup-validators [formGroup]="form" inputName="username"></rs-index-signup-validators>
+			<fieldset class="form-floating">
+				<input
+					[ngClass]="{'is-invalid': form.get('password')?.errors && submitedForm, 'is-valid': !form.get('password')?.errors && submitedForm  }"
+					formControlName="password" type="password" class="form-control" id="password"
+					placeholder="Password">
+				<label for="password">Senha</label>
+			</fieldset>
+			<rs-index-signup-validators [formGroup]="form" inputName="password"></rs-index-signup-validators>
+			<input [routerLink]="['home']" [disabled]="form.invalid" class="form-submit clicavel" type="submit"
+				value="Entrar">
+			<p class="err-server">{{ serverMessage }}</p>
+		</form>
+		<div class="create-div-ou">
+			<div></div>
+			<p>OU</p>
+			<div></div>
+		</div>
+		<a class="alinhado-centro sem-decoracao clicavel">Esqueçeu a senha?</a>
+	</div>
+	<div class="card card-criar-conta">
+		<p class="alinhado-centro">Não tem uma conta? <a [routerLink]="['/signup']"
+				class="sem-decoracao clicavel">Cadastre-se</a></p>
+	</div>
+</section>

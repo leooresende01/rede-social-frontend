@@ -1,0 +1,34 @@
+<p class="clicavel" *ngIf="!publicacao.curtidas">{{
+	publicacao.curtidas
+	}} curtidas</p>
+
+<p (click)="buscarPessoasQueCurtiram(publicacao.dono, publicacao.id)" class="clicavel" data-bs-toggle="modal"
+	data-bs-target="#curtidaUsuarios" *ngIf="publicacao.curtidas === 1 && !publicacao.primeiraCurtida?.curtidor">{{
+	publicacao.curtidas
+	}} pessoa curtiu</p>
+
+<p (click)="buscarPessoasQueCurtiram(publicacao.dono, publicacao.id)" class="clicavel" data-bs-toggle="modal"
+	data-bs-target="#curtidaUsuarios" *ngIf="publicacao.curtidas > 1 && !publicacao.primeiraCurtida?.curtidor">{{
+	publicacao.curtidas }} pessoas curtiram</p>
+
+<p class="clicavel" *ngIf="publicacao.curtidas === 1 && publicacao.primeiraCurtida?.curtidor">
+	<span [routerLink]="['/home', publicacao.primeiraCurtida?.curtidor]"
+		class="usuario-perfil-link">{{publicacao.primeiraCurtida?.curtidor}}</span> curtiu
+</p>
+
+<p *ngIf="publicacao.curtidas === 2 && publicacao.primeiraCurtida?.curtidor">
+	<span [routerLink]="['/home', publicacao.primeiraCurtida?.curtidor]"
+		class="usuario-perfil-link">{{publicacao.primeiraCurtida?.curtidor}}</span> e
+	<span (click)="buscarPessoasQueCurtiram(publicacao.dono, publicacao.id)" data-bs-toggle="modal" class="clicavel"
+		data-bs-target="#curtidaUsuarios">outra pessoa curtiram</span>
+</p>
+
+<p *ngIf="publicacao.curtidas > 2 && publicacao.primeiraCurtida?.curtidor">
+	<span [routerLink]="['/home', publicacao.primeiraCurtida?.curtidor]"
+		class="usuario-perfil-link">{{publicacao.primeiraCurtida?.curtidor}}</span> e
+	<span (click)="buscarPessoasQueCurtiram(publicacao.dono, publicacao.id)" class="clicavel" class="clicavel"
+		data-bs-toggle="modal" data-bs-target="#curtidaUsuarios">outras
+		{{publicacao.curtidas - 1}} pessoas curtiram</span>
+</p>
+<home-perfil-publicacoes-mostrarpessoasquecurtiram>
+</home-perfil-publicacoes-mostrarpessoasquecurtiram>

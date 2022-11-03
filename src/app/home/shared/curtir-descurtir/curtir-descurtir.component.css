@@ -1,0 +1,14 @@
+.curtida-space {
+	display: flex;
+	column-gap: 10px;
+}
+
+.icon-info-publicacao {
+	width: 30px;
+	height: 30px;
+}
+
+.icon-info-publicacao:active {
+	transform: scale(1.4);
+	transition: 1s;
+}

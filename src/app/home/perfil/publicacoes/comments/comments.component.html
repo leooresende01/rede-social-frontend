@@ -1,0 +1,49 @@
+<div class="modal fade" id="comentariosUsuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header header-modal-align">
+				<h1 class="centralizado" id="exampleModalLabel">Comentarios</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #btnClose></button>
+			</div>
+			<div class="modal-body tamanho-maximo">
+				<rs-home-shared-spinnerloading *ngIf="!comentarios" class="mt-5" [elementoAguardado]="comentarios">
+				</rs-home-shared-spinnerloading>
+				<div *ngFor="let comentario of comentarios" class="seguidores">
+					<div class="seguidor-info">
+						<img (click)="irParaOPerfilDoUsuario(comentario.comentador)" class="img-perfil clicavel"
+							(error)="errorImage($event)"
+							src="{{urlApi}}/api/v1/usuarios/{{comentario.comentador}}/imagemDoPerfil">
+						<div class="info-user">
+							<div class="comentario">
+								<p class="comentario-msg"><span (click)="irParaOPerfilDoUsuario(comentario.comentador)"
+										class="seguidores-username">{{ comentario.comentador }}
+									</span>{{comentario.comentario}}</p>
+							</div>
+							<p class="comment-date">Comentado em {{comentario.dataDoComentario}}</p>
+						</div>
+					</div>
+					<img *ngIf="comentario.comentador === usuarioAuthenticadoUsername"
+						class="icon-info-publicacao clicavel" data-bs-toggle="dropdown"
+						src="https://cdn1.iconfinder.com/data/icons/jumpicon-basic-ui-glyph-1/32/-_Dot-More-Vertical-Menu-256.png">
+					<ul class="dropdown-menu">
+						<li><a (click)="deletarComentario(comentario.comentador, publicacao.id, comentario.id)"
+								class="dropdown-item clicavel">Deletar</a></li>
+					</ul>
+				</div>
+				<div *ngIf="comentarios && !comentarios?.length">
+					<p class="text-center mt-5">Nenhum comentario encontrado</p>
+				</div>
+			</div>
+			<div class="formulario-comentario-div">
+				<form (submit)="enviarComentario($event)" [formGroup]="formGroup" class="formulario-comentario">
+					<input formControlName="comentario" placeholder="Adicionar um comentario" type="text"
+						class="form-control sem-raio-na-borda" id="comentarioInput">
+					<button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary sem-raio-na-borda"
+						#botaoSubmit>Comentar</button>
+					<div #elementoLoanding>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

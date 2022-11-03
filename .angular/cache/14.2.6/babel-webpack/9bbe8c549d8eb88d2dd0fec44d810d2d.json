@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class AtualizarUsuarioDto {\n  constructor(username, nomeCompleto, imagem) {\n    this.username = username;\n    this.nomeCompleto = nomeCompleto;\n    this.imagem = imagem;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

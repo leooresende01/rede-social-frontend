@@ -1,0 +1,91 @@
+
+.recentes {
+	margin-bottom: 15px;
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.espaco-lateral {
+	padding: 15px 20vw;
+}
+
+.card-editar-informacoes {
+	border: solid 1px var(--cor-de-fundo);
+	border-radius: 3px;
+	background-color: white;
+	padding: 30px;
+	padding-left: 40px;
+	padding-right: 20vw;
+}
+
+.img-perfil {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	margin-bottom: 20px;
+}
+
+.form-label {
+	font-weight: 500;
+	font-family: unset, sans-serif;
+}
+
+.foto-space {
+	display: flex;
+	column-gap: 30px;
+}
+
+.usuario-info-space {
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+}
+
+.usuario-info-space > h3 {
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.usuario-info-space > p {
+	font-size: 14px;
+	font-weight: 500;
+	color: rgb(0, 149, 246);
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+	.espaco-lateral {
+		padding: 15px 15vw;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.espaco-lateral {
+		padding: 15px 8vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.espaco-lateral {
+		padding: 15px 2vw;
+	}
+
+	.recentes {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	.espaco-lateral {
+		padding: 15px 2vw;
+	}
+
+	.usuario-info-space > p {
+		font-size: 12px;
+	}
+
+	.card-editar-informacoes {
+		padding-right: 10vw;
+	}
+}
+

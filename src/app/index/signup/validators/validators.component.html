@@ -1,0 +1,3 @@
+<p *ngIf="formGroup.get(inputName)?.hasError('minlength')">O {{ inputName }} deve ter no minimo 8 caracteres</p>
+<p *ngIf="formGroup.get(inputName)?.hasError('maxlength')">O {{ inputName }} não pode ter mais que 20 caracteres</p>
+<p *ngIf="!formGroup.get(inputName)?.hasError('minlength') && formGroup.get(inputName)?.hasError('pattern')">O {{ inputName }} tem caracteres invalidos</p>

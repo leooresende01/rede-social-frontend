@@ -1,0 +1,9 @@
+<main class="espaco-lateral">
+	<div class="text-center" *ngIf="!publicacoes.length">
+		<p>Nenhuma publicação recente de pessoas<br> que você segue foi encontrada</p>
+	</div>
+	<div class="recentes" *ngIf="publicacoes.length">
+		<p>Publicacoes recentes</p>
+	</div>
+	<rs-home-timeline-card-fotos class="separar-publicacoes" [publicacoes]="publicacoes"></rs-home-timeline-card-fotos>
+</main>

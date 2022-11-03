@@ -1,0 +1,63 @@
+<section class="section-login">
+	<div class="card card-login">
+		<h1>Rede social</h1>
+		<p>Cadastre-se para ver fotos e<br> vídeos dos seus amigos.</p>
+		<form [formGroup]="formGroup" (submit)="registrarUsuario()" class="form-login">
+			<fieldset class="input-group has-validation">
+				<div [ngClass]="{'is-invalid': formGroup.get('nomeCompleto')?.errors && submitedForm }"
+					class="form-floating">
+					<input focus id="inputUsername"
+						[ngClass]="{'is-invalid': formGroup.get('nomeCompleto')?.errors && submitedForm, 'is-valid': !formGroup.get('nomeCompleto')?.errors && submitedForm }"
+						formControlName="nome" type="text" class="form-control" id="nomeCompleto"
+						placeholder="Nome completo" required #nome>
+					<label for="nomeCompleto">Nome completo</label>
+				</div>
+			</fieldset>
+			<rs-index-signup-validators [formGroup]="formGroup" inputName="nome"></rs-index-signup-validators>
+			<fieldset class="input-group has-validation">
+				<span class="input-group-text">@</span>
+				<div [ngClass]="{'is-invalid': formGroup.get('username')?.errors && submitedForm }"
+					class="form-floating">
+					<input id="inputUsername"
+						[ngClass]="{'is-invalid': formGroup.get('username')?.errors && submitedForm, 'is-valid': !formGroup.get('username')?.errors && submitedForm }"
+						formControlName="username" type="text" class="form-control" id="username" placeholder="Username"
+						required #username>
+					<label for="username">Nome de usuário</label>
+				</div>
+			</fieldset>
+			<rs-index-signup-validators [formGroup]="formGroup" inputName="username"></rs-index-signup-validators>
+			<fieldset class="form-floating">
+				<input
+					[ngClass]="{'is-invalid': formGroup.get('password')?.errors && submitedForm, 'is-valid': !formGroup.get('password')?.errors && submitedForm  }"
+					formControlName="password" type="password" class="form-control" id="password" placeholder="Password"
+					#password>
+				<label for="password">Senha</label>
+			</fieldset>
+			<rs-index-signup-validators [formGroup]="formGroup" inputName="password"></rs-index-signup-validators>
+			<button type="button" (click)="inputFile.click()" class="btn"
+				[ngClass]="{'btn-secondary': !inputFile.value, 'btn-success': inputFile.value}">Imagem do
+				perfil</button>
+			<p class="text-success text-center texto-pequeno" *ngIf="inputFile.value">Imagem {{ inputFile.value |
+				pathNameFormat }}
+				carregada</p>
+			<input class="remover-elemento" type="file" id="inputValue" #inputFile>
+			<input [disabled]="formGroup.invalid" class="form-submit clicavel" type="submit" value="Criar conta">
+			<p class="err-server">{{ serverMessage }}</p>
+		</form>
+		<div *ngIf="progressoSubmit && inputFile.value" class="progress">
+			<div class="progress-bar" role="progressbar" aria-label="Example with label"
+				[style.width]="progressoSubmit+'%'" attr.aria-valuenow="{{ progressoSubmit }}" aria-valuemin="0"
+				aria-valuemax="100">{{ progressoSubmit }}%</div>
+		</div>
+		<div class="create-div-ou">
+			<p>As pessoas que usam nosso serviço podem ter<br> carregado suas informações de contato<br> na rede
+				social<br><br>
+				Ao se cadastrar, você concorda com esse<br>aviso acima
+			</p>
+		</div>
+	</div>
+	<div class="card card-criar-conta">
+		<p class="alinhado-centro">Tem uma conta? <a routerLink="/" class="sem-decoracao clicavel">Conecte-se</a>
+		</p>
+	</div>
+</section>

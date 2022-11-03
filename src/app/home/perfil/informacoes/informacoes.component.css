@@ -1,0 +1,131 @@
+.informacoes-body {
+	display: flex;
+	column-gap: 80px;
+}
+
+.perfil-imagem {
+	width: 160px;
+	height: 160px;
+	margin-top: 20px;
+	margin-left: 40px;
+	border-radius: 80px;
+	justify-self: center;
+	align-self: center;
+}
+
+.informacoes-top {
+	margin-top: 20px;
+	display: flex;
+	column-gap: 20px;
+	align-items: center;
+}
+
+.informacoes-username {
+	font-size: 20px;
+}
+
+.botao-editar-informacoes {
+	border: 1px solid var(--cor-de-fundo);
+	background-color: transparent;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.info-number-weingh {
+	font-weight: 501;
+}
+
+.informacoes-seguidores {
+	margin: 30px 0;
+	display: flex;
+	justify-content: space-between;
+	column-gap: 30px;
+}
+
+.nome-completo {
+	font-weight: 500;
+}
+
+@media screen and (max-width: 700px) {
+	.perfil-imagem {
+		width: 22vw;
+		height: 120px;
+		margin: 0;
+		border-radius: 80px;
+		justify-self: self-start;
+		align-self: center;
+	}
+
+	.informacoes-top {
+		justify-content: flex-start;
+		column-gap: 10px;
+	}
+
+	.informacoes-body {
+		display: flex;
+		column-gap: 3.8vw;
+	}
+
+	.informacoes-username {
+		font-size: 3.5vw;
+	}
+
+	.informacoes-seguidores {
+		margin: 30px 0;
+		font-size: 2.8vw;
+		display: flex;
+		justify-content: flex-start;
+		column-gap: 3.2vw;
+	}
+
+	.nome-completo {
+		font-size: 3.6vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.perfil-imagem {
+		width: 22vw;
+		height: 100px;
+		margin: 0;
+		border-radius: 80px;
+		justify-self: self-start;
+		align-self: center;
+	}
+
+	.informacoes-top {
+		justify-content: flex-start;
+		column-gap: 10px;
+	}
+
+	.informacoes-body {
+		display: flex;
+		column-gap: 3.8vw;
+	}
+
+	.informacoes-username {
+		font-size: 3.5vw;
+	}
+
+	.informacoes-seguidores {
+		margin: 30px 0;
+		font-size: 3.2vw;
+		display: flex;
+		justify-content: flex-start;
+		column-gap: 3vw;
+	}
+
+	.nome-completo {
+		font-size: 3.6vw;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.informacoes-seguidores {
+		font-size: 2.9vw;
+	}
+	
+	.informacoes-username {
+		font-size: 3vw;
+	}	
+}

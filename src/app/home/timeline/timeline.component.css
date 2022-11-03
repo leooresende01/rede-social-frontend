@@ -1,0 +1,33 @@
+.espaco-lateral {
+	padding: 15px 27vw;
+}
+
+.recentes {
+	margin-bottom: 15px;
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.separar-publicacoes {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+	.espaco-lateral {
+		padding: 15px 15vw;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.espaco-lateral {
+		padding: 15px 10vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.espaco-lateral {
+		padding: 15px 2vw;
+	}
+}

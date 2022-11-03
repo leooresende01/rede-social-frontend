@@ -1,0 +1,15 @@
+<div class="card-pesquisa">
+	<rs-home-shared-spinnerloading [elementoAguardado]="usuarios"></rs-home-shared-spinnerloading>
+	<div *ngFor="let usuario of usuarios" (click)="irParaOUsuarioSelecionado(usuario.username)">
+		<div *ngIf="usuario.username !== usuarioAutenticadoUsername" class="seguidores">
+			<div class="seguidor-info">
+				<img class="img-perfil" (error)="errorImage($event)"
+				src="{{urlApi}}/api/v1/usuarios/{{usuario.username}}/imagemDoPerfil">
+				<div class="info-user">
+					<p class="seguidores-username">{{usuario.username}}</p>
+					<p class="seguidores-nome-completo">{{ usuario.nomeCompleto }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,65 @@
+.tamanho-maximo {
+	min-height: 150px;
+}
+
+.info-user {
+	row-gap: 7px;
+}
+
+.img-perfil {
+	align-self: flex-start;
+}
+
+.seguidores-username {
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.comentario-msg {
+	cursor: default;
+	font-size: 15px;
+}
+
+.icon-info-publicacao {
+	width: 30px;
+	height: 30px;
+}
+
+.comment-date {
+	cursor: default;
+	font-size: 12px;
+}
+
+.formulario-comentario {
+	margin-top: 15px;
+	border-top: 1px solid rgb(0 0 0 / 13%);
+}
+
+.formulario-comentario {
+	display: flex;
+}
+
+.form-control {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-left: none;
+	border-bottom: none;
+}
+
+.btn-primary {
+	border-bottom: none;
+	border-right: none;
+}
+
+.form-control:focus {
+	box-shadow: inset 0 1px 1px rgba(33, 36, 218, 0.075), 0 0 3px rgba(255, 0, 0, 0.6);
+}
+
+.sem-raio-na-borda {
+	border-radius: 0;
+}
+
+.seguidor-info {
+	display: grid;
+    grid-template-columns: 55px 1fr;
+}

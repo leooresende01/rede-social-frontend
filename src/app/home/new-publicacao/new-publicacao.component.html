@@ -1,0 +1,30 @@
+<div class="modal fade" id="novaPublicacaoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header header-modal-align">
+				<h1 class="fs-5 centralizado" id="exampleModalLabel">Nova publicação</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #btnClose></button>
+			</div>
+			<div class="modal-body">
+				<form (submit)="salvarPublicacao()" [formGroup]="formGroup" class="formulario">
+					<button type="button" (click)="inputFile.click()" class="btn"
+						[ngClass]="{'btn-secondary': !inputFile.value, 'btn-success': inputFile.value}">Carregar
+						imagem</button>
+					<input (change)="carregarImagemProUsuario($event)" formControlName="imagem" class="remover-elemento"
+						type="file" id="inputValue" #inputFile>
+					<img class="img-publi" *ngIf="inputFile.value" src="inputFile.value" #img />
+					<div *ngIf="!formGroup.invalid" class="mb-3 legenda-input">
+						<textarea maxlength="50" placeholder="Legenda da publicação" class="form-control" rows="3" #legenda></textarea>
+					  </div>
+					<input [disabled]="formGroup.invalid" class="form-submit clicavel" type="submit"
+						value="Publicar">
+					<div *ngIf="progressoSubmit && inputFile.value" class="progress">
+						<div class="progress-bar" role="progressbar" aria-label="Example with label"
+							[style.width]="progressoSubmit+'%'" attr.aria-valuenow="{{ progressoSubmit }}"
+							aria-valuemin="0" aria-valuemax="100">{{ progressoSubmit }}%</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

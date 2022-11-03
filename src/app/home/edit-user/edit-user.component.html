@@ -1,0 +1,32 @@
+<div class="espaco-lateral">
+	<h1 class="recentes">Editar informacoes do usuário</h1>
+	<div class="card-editar-informacoes">
+		<div class="foto-space">
+			<img (click)="fotoInput.click()" class="img-perfil clicavel" (error)="errorImage($event)"
+				attr.src="{{urlApi}}/api/v1/usuarios/{{usuario.username}}/imagemDoPerfil" #imagemElement>
+			<div class="usuario-info-space">
+				<h3>{{usuario.username}}</h3>
+				<p (click)="fotoInput.click()">Alterar imagem do perfil</p>
+			</div>
+		</div>
+		<form [formGroup]="formGroup" (submit)="editarUsuario()">
+			<div class="mb-3">
+				<label for="nomeCompleto" class="form-label">Nome completo</label>
+				<input formControlName="nome" type="text" class="form-control" id="nomeCompleto"
+					aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text"></div>
+			</div>
+			<rs-index-signup-validators [formGroup]="formGroup" inputName="nome"></rs-index-signup-validators>
+			<div class="mb-3">
+				<label for="username" class="form-label">Nome de usuario</label>
+				<input formControlName="username" type="text" class="form-control" id="username"
+					aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text"></div>
+			</div>
+			<input (change)="carregarImagemProUsuario($event)" type="file" class="remover-elemento" #fotoInput>
+			<rs-index-signup-validators [formGroup]="formGroup" inputName="username"></rs-index-signup-validators>
+			<div class="invalid-feedback">{{mensagemErro}}</div>
+			<button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">Editar informações</button>
+		</form>
+	</div>
+</div>

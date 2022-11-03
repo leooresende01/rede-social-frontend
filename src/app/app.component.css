@@ -1,0 +1,31 @@
+.espaco-lateral {
+	padding: 25vw 10px;
+}
+
+.absolute {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.loading {
+    background: #ff0000;
+    animation: progress 2s ease;
+    height: 3px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}

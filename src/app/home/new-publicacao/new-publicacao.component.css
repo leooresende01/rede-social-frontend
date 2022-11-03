@@ -1,0 +1,40 @@
+.header-modal-align { 
+	display: grid;
+	grid-template-columns: 20% 1fr 20%;
+}
+
+.centralizado {
+	grid-column: 2;
+	justify-self: center;
+}
+
+.btn-close {
+	grid-column: 3;
+	justify-self: end;
+}
+
+.formulario {
+	row-gap: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.img-publi {
+	width: 90%;
+	max-height: 60vh;
+}
+
+.legenda-input {
+	width: 90%;
+	display: block;
+}
+
+.form-submit {
+	padding-left: 20px!important;
+	padding-right: 20px!important;
+}
+
+.progress {
+	width: 60%;
+}

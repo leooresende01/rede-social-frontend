@@ -1,0 +1,59 @@
+.card-fotos {
+	background-color: white;
+	padding-top: 10px;
+	border-radius: 7px;
+	border: solid 1px var(--cor-de-fundo);
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.301);
+}
+
+.card-top {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	margin-bottom: 10px;
+	border-bottom: none;
+}
+
+.publicacao-img-perfil {
+	width: 40px;
+	margin-left: 10px;
+	height: 40px;
+	border-radius: 30px;
+}
+
+.publicacao-username {
+	font-weight: 500;
+}
+
+.publicacao-img {
+	width: 100%;
+	max-width: 100%;
+	min-height: 250px;
+	max-height: 700px;
+	border: 1px solid rgba(0, 0, 0, 0.295);
+	border-left: none;
+	border-right: none;
+}
+
+.card-bottom {
+	padding: 10px 20px;
+}
+
+.publicacao-interacoes {
+	display: flex;
+	column-gap: 20px;
+}
+
+.publicacao-postagem-data {
+	font-size: 11px;
+	margin-top: 10px;
+}
+
+.publicacao-infos {
+	border: none;
+	row-gap: 10px;
+}
+
+.sombra {
+	box-shadow: none;
+}

@@ -1,0 +1,18 @@
+.perfil-main-espaco {
+	padding: 30px 15vw;
+	display: flex;
+	flex-direction: column;
+	row-gap: 60px;
+}
+
+@media screen and (max-width: 1000px) {
+	.perfil-main-espaco {
+		padding: 10px 5vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.perfil-main-espaco {
+		padding: 10px 2vw;
+	}
+}

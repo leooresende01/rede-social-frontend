@@ -1,0 +1,22 @@
+<div class="modal fade" id="curtidaUsuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header header-modal-align">
+				<h1 class="centralizado" id="exampleModalLabel">Usuários que curtiram</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #btnClose></button>
+			</div>
+			<div class="modal-body tamanho-maximo">
+				<rs-home-shared-spinnerloading [elementoAguardado]="curtidas"></rs-home-shared-spinnerloading>
+				<div *ngFor="let curtida of curtidas" class="seguidores">
+					<div class="seguidor-info clicavel" (click)="irParaOPerfilDoUsuario(curtida.curtidor)">
+						<img class="img-perfil" (error)="errorImage($event)"
+							src="{{urlApi}}/api/v1/usuarios/{{curtida.curtidor}}/imagemDoPerfil">
+						<div class="info-user">
+							<p class="seguidores-username">{{ curtida.curtidor }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

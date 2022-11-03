@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+	--cor-de-fundo: rgba(0, 0, 0, 0.336);
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.clicavel {
+	cursor: pointer;
+}
+
+.remover-eventos {
+	pointer-events: none;
+}
+
+.remover-elemento {
+	display: none;
+}
+
+.texto-pequeno {
+	font-size: 14px;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.modal-body {
+	padding-top: 5px;
+}
+
+.btn-outline-secondary {
+	color: black!important;
+}
+
+.btn-outline-secondary:hover {
+	color: white!important;
+}
+
+.fonte-destacada {
+	font-weight: 600;
+	font-family: 'OpenSans', sans-serif;
+}

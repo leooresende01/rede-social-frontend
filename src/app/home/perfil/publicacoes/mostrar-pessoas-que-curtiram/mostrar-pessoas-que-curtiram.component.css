@@ -1,0 +1,33 @@
+.header-modal-align {
+	grid-template-columns: 1fr 80% 1fr;
+    font-size: none;
+}
+
+.header-modal-align > .centralizado {
+	grid-template-columns: 1fr 80% 1fr;
+	font-size: 1.5vw;
+}
+
+@media screen and (max-width: 1024px) {
+	.header-modal-align > .centralizado {
+		font-size: 2.5vw;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.header-modal-align > .centralizado {
+		font-size: 3.5vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.header-modal-align > .centralizado {
+		font-size: 4.5vw;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.header-modal-align > .centralizado {
+		font-size: 5vw;
+	}
+}
