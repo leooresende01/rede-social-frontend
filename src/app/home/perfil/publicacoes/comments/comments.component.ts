@@ -16,7 +16,7 @@ import { Publicacao } from 'src/model/publicacao';
 	selector: 'rs-home-perfil-publicacoes-comments',
 	templateUrl: './comments.component.html',
 	styleUrls: [
-		'../../informacoes/seguidores/seguidores.component.css',
+		'../../informacoes/mostrar-seguidores-seguindo/mostrar-seguidores-seguindo.component.css',
 		'../mostrar-pessoas-que-curtiram/mostrar-pessoas-que-curtiram.component.css',
 		'./comments.component.css'
 	]

@@ -11,7 +11,8 @@ import { Curtida } from './../../../../../model/curtida';
 @Component({
 	selector: 'home-perfil-publicacoes-mostrarpessoasquecurtiram',
 	templateUrl: './mostrar-pessoas-que-curtiram.component.html',
-	styleUrls: ['../../informacoes/seguidores/seguidores.component.css', './mostrar-pessoas-que-curtiram.component.css']
+	styleUrls: ['../../informacoes/mostrar-seguidores-seguindo/mostrar-seguidores-seguindo.component.css', 
+		'./mostrar-pessoas-que-curtiram.component.css']
 })
 export class MostrarPessoasQueCurtiramComponent implements OnInit {
 	public usernameUsuarioAutenticado: string;

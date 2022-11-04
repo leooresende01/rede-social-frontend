@@ -11,12 +11,12 @@
 		</div>
 		<div class="informacoes-seguidores">
 			<p><span class="fonte-destacada">{{ usuario.publicacoes }}</span> Publicações</p>
-			<p [ngClass]="{'remover-eventos' : !usuario.seguidores}" (click)="buscarSeguidores(usuario.username)"
-				class="clicavel" data-bs-toggle="modal" data-bs-target="#exampleModal"><span
+			<p data-bs-toggle="modal" data-bs-target="#seguidoresModal" [ngClass]="{'remover-eventos' : !usuario.seguidores}" (click)="buscarSeguidores(usuario.username)"
+				class="clicavel"><span
 					class="fonte-destacada">{{ usuario.seguidores}}</span> Seguidores</p>
 			<p (click)="buscarPessoasQueOUsuarioSegue(usuario.username)"
 				[ngClass]="{'remover-eventos' : !usuario.seguindo}" class="clicavel" data-bs-toggle="modal"
-				data-bs-target="#seguindo"><span class="fonte-destacada">{{
+				data-bs-target="#seguindoModal"><span class="fonte-destacada">{{
 					usuario.seguindo }}</span> Seguindo</p>
 		</div>
 		<rs-home-perfil-seguidores [usuarioUsername]="usuario.username" [seguidoresSet]="seguidores$ | async">

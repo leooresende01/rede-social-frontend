@@ -9,6 +9,9 @@
 - [CryptoJS](https://cryptojs.gitbook.io/docs/)
 
 ---
+## Observações:
+- Essa aplicação não é focada em UX/UI, e sim no uso das funcionalidades do framework Angular
+---
 ## Extras:
 - [Aplicação back-end (Source)](https://github.com/leooresende01/rede-social-api)
 

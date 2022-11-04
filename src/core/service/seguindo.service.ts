@@ -1,19 +1,21 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs';
 import { UserAuthenticateService } from 'src/core/service/user-authenticate.service';
-import { Publicacao } from 'src/model/publicacao';
+import { Paginacao } from 'src/model/paginacao';
 import { Usuario } from 'src/model/usuario';
 import { urlApi } from '../util/url-api';
 
 @Injectable({ providedIn: 'root' })
 export class SeguindoService {
 	private readonly usuarioApiPath: string = "/api/v1/usuarios";
-	
+	private readonly quantidadeDeSeguindosPorPagina: number = 8;
+
 	constructor(private http: HttpClient, private userAuthenticateService: UserAuthenticateService) { }
 	
-	buscarPessoasQueOUsuarioSegue(username: string): Observable<Array<Usuario>> {
-		return this.http.get<Array<Usuario>>(`${urlApi}${this.usuarioApiPath}/${username}/seguindo`);
+	buscarPessoasQueOUsuarioSegue(username: string, pagina: number): Observable<Paginacao> {
+		const params = new HttpParams().set('pagina', pagina).set('quantidade', this.quantidadeDeSeguindosPorPagina);
+		return this.http.get<Paginacao>(`${urlApi}${this.usuarioApiPath}/${username}/seguindo`, {params});
 	}
 	
 	seguirUsuario(usernameUsuarioSeguido: string): Observable<Usuario> {
@@ -36,8 +38,11 @@ export class SeguindoService {
 		.get<Usuario>(`${urlApi}${this.usuarioApiPath}/${usernameUsuarioAutenticado}/seguindo/${username}`);
 	}
 
-	buscarPublicacoesDeQuemOUsuarioAutenticadoSegue(usernameUsuarioAutenticado: string): Observable<Array<Publicacao>> {
+	buscarPublicacoesDeQuemOUsuarioAutenticadoSegue(usernameUsuarioAutenticado: string, pagina: number): Observable<Paginacao> {
 		const headers = this.userAuthenticateService.pegarHeaderAuthorization();
-		return this.http.get<Array<Publicacao>>(`${urlApi}${this.usuarioApiPath}/${usernameUsuarioAutenticado}/seguindo/publicacoes`, {headers});
+		let params = new HttpParams()
+			.set('pagina', pagina)
+			.set('quantidadeDePublicacoes', 12);
+		return this.http.get<Paginacao>(`${urlApi}${this.usuarioApiPath}/${usernameUsuarioAutenticado}/seguindo/publicacoes`, {headers, params});
 	}
 }

@@ -109,10 +109,10 @@
 
 	.informacoes-seguidores {
 		margin: 30px 0;
-		font-size: 3.2vw;
+		font-size: 3vw;
 		display: flex;
 		justify-content: flex-start;
-		column-gap: 3vw;
+		column-gap: 2.7vw;
 	}
 
 	.nome-completo {
@@ -122,7 +122,8 @@
 
 @media screen and (max-width: 350px) {
 	.informacoes-seguidores {
-		font-size: 2.9vw;
+		font-size: 2.8vw;
+		column-gap: 2.5vw;
 	}
 	
 	.informacoes-username {

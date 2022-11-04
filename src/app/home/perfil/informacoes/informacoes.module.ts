@@ -8,9 +8,10 @@ import { BotoesSeguirComponent } from './botoes-seguir/botoes-seguir.component';
 import { InformacoesComponent } from './informacoes.component';
 import { SeguidoresComponent } from './seguidores/seguidores.component';
 import { SeguindoComponent } from './seguindo/seguindo.component';
+import { MostrarSeguidoresSeguindoComponent } from './mostrar-seguidores-seguindo/mostrar-seguidores-seguindo.component';
 
 @NgModule({
-	declarations: [InformacoesComponent, SeguindoComponent, SeguidoresComponent, BotoesSeguirComponent],
+	declarations: [InformacoesComponent, SeguindoComponent, SeguidoresComponent, BotoesSeguirComponent, MostrarSeguidoresSeguindoComponent],
 	imports: [RouterModule, CommonModule, ReactiveFormsModule, PipeModule, SharedModule],
 	exports: [InformacoesComponent]
 })

@@ -1,5 +1,6 @@
+import { Paginacao } from 'src/model/paginacao';
 import { SeguidoresSeguindoUtil } from 'src/core/util/seguidores-seguindo.util';
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { Observable, Subscription, filter } from 'rxjs';
 import { AtualizarSeguidoresSeguindoService } from 'src/core/observable/atualizar-seguidores-seguindo.service';
 import { SeguidoresService } from 'src/core/service/seguidores.service';
@@ -16,16 +17,18 @@ import { urlApi } from 'src/core/util/url-api';
 })
 export class InformacoesComponent implements OnInit, OnDestroy {
 	public urlApi: string = urlApi;
-	public seguidores$: Observable<Array<Usuario>>;
-	public seguindo$: Observable<Array<Usuario>>;
+	public seguidores$: Observable<Paginacao>;
+	public seguindo$: Observable<Paginacao>;
 	public atualizarInformacoesDoUsuarioSubscription: Subscription;
-
+	private readonly startPage: number = 0;
+	private atualizarUsuarioSubscription: Subscription;
+	
 	@Input()
 	public usuario: Usuario;
 
 	@Input()
 	public usernameUsuarioAutenticado: string;
-	atualizarUsuarioSubscription: Subscription;
+
 	constructor(private seguidoresService: SeguidoresService,
 		private seguindoService: SeguindoService,
 		private atualizarSeguidoresSeguindoService: AtualizarSeguidoresSeguindoService,
@@ -43,11 +46,11 @@ export class InformacoesComponent implements OnInit, OnDestroy {
 	}
 
 	buscarSeguidores(usuarioUsername: string): void {
-		this.seguidores$ = this.seguidoresService.buscarSeguidoresDoUsuario(usuarioUsername);
+		this.seguidores$ = this.seguidoresService.buscarSeguidoresDoUsuario(usuarioUsername, this.startPage);
 	}
 
 	buscarPessoasQueOUsuarioSegue(usuarioUsername: string): void {
-		this.seguindo$ = this.seguindoService.buscarPessoasQueOUsuarioSegue(usuarioUsername);
+		this.seguindo$ = this.seguindoService.buscarPessoasQueOUsuarioSegue(usuarioUsername, this.startPage);
 	}
 
 	errorImage(event: Event) {

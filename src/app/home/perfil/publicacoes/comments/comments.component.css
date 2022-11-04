@@ -63,3 +63,35 @@
 	display: grid;
     grid-template-columns: 55px 1fr;
 }
+
+@media screen and (max-width: 500px) {
+	.seguidores-username {
+		cursor: pointer;
+		font-size: 4.2vw;
+	}
+
+	.comentario-msg {
+		font-size: 3.2vw;
+	}
+
+	.comment-date {
+		font-size: 2.5vw;
+	}
+
+}
+
+@media screen and (max-width: 320px) {
+	.seguidores-username {
+		cursor: pointer;
+		font-size: 3.5vw;
+	}
+
+	.comentario-msg {
+		font-size: 2.7vw;
+	}
+
+	.comment-date {
+		font-size: 2.1vw;
+	}
+
+}

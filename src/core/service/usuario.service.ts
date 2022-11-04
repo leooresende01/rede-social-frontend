@@ -1,6 +1,6 @@
 import { UsuarioUtil } from './../util/usuario.util';
 import { UserAuthenticateService } from './user-authenticate.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Injectable } from "@angular/core";
 import { Usuario } from 'src/model/usuario';
@@ -11,6 +11,7 @@ import { urlApi } from '../util/url-api';
 @Injectable({ providedIn: 'root' })
 export class UsuarioService {
 	private readonly pathApi = "/api/v1/usuarios";
+	private readonly quantidadeDeUsuarioBuscado: number = 8;
 	
 	constructor(private http: HttpClient,
 		private userAuthenticateService: UserAuthenticateService) { }
@@ -35,7 +36,8 @@ export class UsuarioService {
 	}
 	
 	buscarUsuarioPorRegex(value: any): Observable<Array<Usuario>> {
-		return this.http.get<Array<Usuario>>(`${urlApi}${this.pathApi}/regex/${value}`);
+		const params = new HttpParams().set('quantidade', this.quantidadeDeUsuarioBuscado);
+		return this.http.get<Array<Usuario>>(`${urlApi}${this.pathApi}/regex/${value}`, {params});
 	}
 
 }
