@@ -6,8 +6,8 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #btnClose></button>
 			</div>
 			<div class="modal-body tamanho-maximo">
-				<rs-home-shared-spinnerloading *ngIf="!comentarios" class="mt-5" [elementoAguardado]="comentarios">
-				</rs-home-shared-spinnerloading>
+				<rs-spinnerloading *ngIf="!comentarios" class="mt-5" [elementoAguardado]="comentarios">
+				</rs-spinnerloading>
 				<div *ngFor="let comentario of comentarios" class="seguidores">
 					<div class="seguidor-info">
 						<img (click)="irParaOPerfilDoUsuario(comentario.comentador)" class="img-perfil clicavel"

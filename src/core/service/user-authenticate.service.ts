@@ -17,6 +17,7 @@ export class UserAuthenticateService {
 		this.salvarLoginDto(loginDto);
 		localStorage.setItem(this.usernameUsuarioAutenticado, username);
 		this.router.navigateByUrl(nextUrl);
+		setTimeout(() => console.clear(), 300);
 	}
 
 	salvarLoginDto(loginDto: LoginDto) {

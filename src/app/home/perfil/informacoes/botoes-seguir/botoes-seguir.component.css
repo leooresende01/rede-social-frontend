@@ -1,17 +1,17 @@
 @media screen and (max-width: 500px) {
 	.botao-texto {
-		font-size: 3vw;
+		font-size: 3.8vw;
 	}
 }
 
 @media screen and (max-width: 350px) {
 	.botao-texto {
-		font-size: 2.5vw;
+		font-size: 3.2vw;
 	}
 }
 
 @media screen and (max-width: 270px) {
 	.botao-texto {
-		font-size: 2vw;
+		font-size: 2.7vw;
 	}
 }

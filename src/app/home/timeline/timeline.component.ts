@@ -47,7 +47,6 @@ export class TimelineComponent implements OnInit, OnDestroy {
 		let currentScroll = window.scrollY + window.innerHeight;
 		let modifier = 200;
 		if (currentScroll + modifier > documentHeight) {
-			console.log(`${!this.ultimaPagina} && ${!this.estaBuscandoAlgumaPublicacao}`);
 			!this.ultimaPagina &&
 				!this.estaBuscandoAlgumaPublicacao &&
 				this.buscarMaisPublicacoes();
@@ -55,7 +54,6 @@ export class TimelineComponent implements OnInit, OnDestroy {
 	}
 
 	buscarMaisPublicacoes() {
-		console.log('Tchall');
 		this.estaBuscandoAlgumaPublicacao = true;
 		this.pagina++;
 		this.seguindoService

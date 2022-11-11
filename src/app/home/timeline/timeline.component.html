@@ -1,10 +1,8 @@
 <main class="espaco-lateral">
-	<div class="text-center" *ngIf="!publicacoes.length">
-		<p>Nenhuma publicação recente de pessoas<br> que você segue foi encontrada</p>
-	</div>
 	<div class="recentes" *ngIf="publicacoes.length">
 		<p>Publicacoes recentes</p>
 	</div>
-	<rs-home-timeline-card-fotos class="separar-publicacoes" [publicacoes]="publicacoes"></rs-home-timeline-card-fotos>
-	<rs-home-shared-spinnerloading [elementoAguardado]="!estaBuscandoAlgumaPublicacao"></rs-home-shared-spinnerloading>
+	<rs-mostrar-usuarios-aleatorios *ngIf="!publicacoes.length"></rs-mostrar-usuarios-aleatorios>
+	<rs-card-fotos class="separar-publicacoes" [publicacoes]="publicacoes"></rs-card-fotos>
+	<rs-spinnerloading [elementoAguardado]="!estaBuscandoAlgumaPublicacao"></rs-spinnerloading>
 </main>

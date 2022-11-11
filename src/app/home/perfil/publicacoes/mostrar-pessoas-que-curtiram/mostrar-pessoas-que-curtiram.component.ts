@@ -9,7 +9,7 @@ import { UsuarioUtil } from 'src/core/util/usuario.util';
 import { Curtida } from './../../../../../model/curtida';
 
 @Component({
-	selector: 'home-perfil-publicacoes-mostrarpessoasquecurtiram',
+	selector: 'rs-mostrar-pessoas-que-curtiram',
 	templateUrl: './mostrar-pessoas-que-curtiram.component.html',
 	styleUrls: ['../../informacoes/mostrar-seguidores-seguindo/mostrar-seguidores-seguindo.component.css', 
 		'./mostrar-pessoas-que-curtiram.component.css']

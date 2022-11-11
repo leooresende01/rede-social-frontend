@@ -10,19 +10,19 @@
 		<div class="publicacao-infos sombra">
 			<div class="info-curtidas-menu">
 				<div class="interacoes-space">
-					<rs-home-curtirdescurtir [publicacao]="publicacao" [publicacoes]="publicacoes">
-					</rs-home-curtirdescurtir>
+					<rs-curtir-descurtir [publicacao]="publicacao" [publicacoes]="publicacoes">
+					</rs-curtir-descurtir>
 					<img (click)="buscarComentarios($event, publicacao)" data-bs-toggle="modal" data-bs-target="#comentariosUsuarios" class="icon-info-publicacao clicavel" src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/cloud_text-256.png">
 				</div>
 			</div>
-			<rs-home-perfil-publicacoes-pessoasquecurtiram class="pessoas-que-curtiram" [publicacao]="publicacao">
-			</rs-home-perfil-publicacoes-pessoasquecurtiram>
+			<rs-pessoas-que-curtiram class="pessoas-que-curtiram" [publicacao]="publicacao">
+			</rs-pessoas-que-curtiram>
 			<div class="div-legenda" *ngIf="publicacao.legenda">
 				<p class="publicacao-legenda"><span class="publicacao-dono-username">{{ publicacao.dono }}
 				</span>{{publicacao.legenda}}</p>
 			</div>
 			<p *ngIf="publicacao.comentarios" class="open-comments clicavel" (click)="buscarComentarios($event, publicacao)" data-bs-toggle="modal" data-bs-target="#comentariosUsuarios">Ver todos os {{publicacao.comentarios}} comentarios</p>
-			<rs-home-perfil-publicacoes-comments></rs-home-perfil-publicacoes-comments>
+			<rs-comments></rs-comments>
 			<p class="publicacao-data">Publicada em {{publicacao.dataDePublicacao}}</p>
 		</div>
 	</div>

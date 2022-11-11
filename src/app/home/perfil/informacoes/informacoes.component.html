@@ -6,8 +6,8 @@
 			<p class="informacoes-username">{{ usuario.username }}</p>
 			<button [routerLink]="['/home', 'editarInformacoes']" *ngIf="usernameUsuarioAutenticado === usuario.username" type="button"
 				class="btn btn-outline-secondary btn-sm botao-texto">Editar informações</button>
-			<rs-home-perfil-informacoes-botoesseguir [usuario]="usuario"
-				[usernameUsuarioAutenticado]="usernameUsuarioAutenticado"></rs-home-perfil-informacoes-botoesseguir>
+			<rs-botoes-seguir [usuario]="usuario"
+				[usernameUsuarioAutenticado]="usernameUsuarioAutenticado"></rs-botoes-seguir>
 		</div>
 		<div class="informacoes-seguidores">
 			<p><span class="fonte-destacada">{{ usuario.publicacoes }}</span> Publicações</p>
@@ -19,10 +19,10 @@
 				data-bs-target="#seguindoModal"><span class="fonte-destacada">{{
 					usuario.seguindo }}</span> Seguindo</p>
 		</div>
-		<rs-home-perfil-seguidores [usuarioUsername]="usuario.username" [seguidoresSet]="seguidores$ | async">
-		</rs-home-perfil-seguidores>
-		<rs-home-perfil-seguindo [usuarioUsername]="usuario.username" [seguindoSet]="seguindo$ | async">
-		</rs-home-perfil-seguindo>
+		<rs-seguidores [usuarioUsername]="usuario.username" [seguidoresSet]="seguidores$ | async">
+		</rs-seguidores>
+		<rs-seguindo [usuarioUsername]="usuario.username" [seguindoSet]="seguindo$ | async">
+		</rs-seguindo>
 		<div class="informacao-nome">
 			<p class="nome-completo">{{ usuario.nomeCompleto }}</p>
 		</div>

@@ -1,0 +1,18 @@
+<h3 class="usuarios-sugeridos">Usuários sugeridos</h3>
+<div class="card">
+	<rs-spinnerloading [elementoAguardado]="usuarios"></rs-spinnerloading>
+	<div *ngFor="let usuario of usuarios" class="seguidores">
+		<div *ngIf="usuario.username !== usernameUsuarioAutenticado" class="seguidor-info clicavel" (click)="irParaOPerfilDoUsuario(usuario.username)">
+			<img class="img-perfil" (error)="errorImage($event)"
+				src="{{urlApi}}/api/v1/usuarios/{{usuario.username}}/imagemDoPerfil">
+			<div class="info-user">
+				<p class="seguidores-username">{{ usuario.username }}</p>
+				<p class="menor">{{ usuario.nomeCompleto | formatarNomeDoUsuario }}</p>
+			</div>
+		</div>
+		<rs-botoes-seguir class="centralizar" [usuario]="usuario"
+			[usernameUsuarioAutenticado]="usernameUsuarioAutenticado"></rs-botoes-seguir>
+	</div>
+	<p class="text-center mostrar-mais" *ngIf="usuarios && !estaBuscandoAlgumSeguidor && !ultimaPagina" (click)="buscarMaisSeguidoresOuSeguindo()">Ver mais</p>
+	<rs-spinnerloading [elementoAguardado]="!estaBuscandoAlgumSeguidor"></rs-spinnerloading>
+</div>

@@ -1,0 +1,17 @@
+.usuarios-sugeridos {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.card {
+	row-gap: 10px;
+	padding: 0 3vw;
+	padding-bottom: 10px;
+	position: static!important;
+}
+
+.centralizar {
+	align-self: center;
+}

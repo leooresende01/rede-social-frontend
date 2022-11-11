@@ -13,7 +13,7 @@ import { urlApi } from './../../../../../core/util/url-api';
 import { Publicacao } from 'src/model/publicacao';
 
 @Component({
-	selector: 'rs-home-perfil-publicacoes-comments',
+	selector: 'rs-comments',
 	templateUrl: './comments.component.html',
 	styleUrls: [
 		'../../informacoes/mostrar-seguidores-seguindo/mostrar-seguidores-seguindo.component.css',

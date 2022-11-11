@@ -15,7 +15,7 @@ import { PublicacaoService } from './../../../../core/service/publicacao.service
 import { AlertType } from './../../../../model/alert-type';
 
 @Component({
-	selector: 'rs-home-perfil-publicacoes',
+	selector: 'rs-publicacoes',
 	templateUrl: './publicacoes.component.html',
 	styleUrls: ['./publicacoes.component.css']
 })

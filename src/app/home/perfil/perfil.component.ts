@@ -1,11 +1,10 @@
-import { SeguidoresSeguindoUtil } from 'src/core/util/seguidores-seguindo.util';
-import { Publicacao } from './../../../model/publicacao';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserAuthenticateService } from 'src/core/service/user-authenticate.service';
-import { UsuarioService } from 'src/core/service/usuario.service';
+import { SeguidoresSeguindoUtil } from 'src/core/util/seguidores-seguindo.util';
 import { Usuario } from 'src/model/usuario';
+import { Publicacao } from './../../../model/publicacao';
 
 @Component({
 	templateUrl: './perfil.component.html',

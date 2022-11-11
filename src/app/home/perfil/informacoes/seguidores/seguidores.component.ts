@@ -3,7 +3,7 @@ import { Paginacao } from 'src/model/paginacao';
 import { Usuario } from 'src/model/usuario';
 
 @Component({
-	selector: 'rs-home-perfil-seguidores',
+	selector: 'rs-seguidores',
 	templateUrl: './seguidores.component.html',
 	styleUrls: ['./seguidores.component.css']
 })

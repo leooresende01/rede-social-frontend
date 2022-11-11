@@ -8,7 +8,7 @@ import { AlertType } from 'src/model/alert-type';
 import { Publicacao } from 'src/model/publicacao';
 
 @Component({
-	selector: 'rs-home-curtirdescurtir',
+	selector: 'rs-curtir-descurtir',
 	templateUrl: './curtir-descurtir.component.html',
 	styleUrls: ['./curtir-descurtir.component.css']
 })

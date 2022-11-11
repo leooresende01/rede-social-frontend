@@ -6,8 +6,8 @@
 				<input formControlName="query" (blur)="ocultarMenuQuery()" (focus)="elementActive = true"
 					class="form-search" placeholder="Pesquisar usuarios" type="search" #inputQueryUser>
 			</form>
-			<rs-home-finduser [formGroup]="formGroup" [usuariosConsulta]="usuariosConsulta$ | async"
-				*ngIf="elementActive && !formGroup.get('query')?.hasError('required')"></rs-home-finduser>
+			<rs-finduser [formGroup]="formGroup" [usuariosConsulta]="usuariosConsulta$ | async"
+				*ngIf="elementActive && !formGroup.get('query')?.hasError('required')"></rs-finduser>
 		</div>
 		<nav class="header-espaco-interno home-header-nav">
 			<img *ngIf="url === '/home'; else imagemAlternativa" class="icon-nav clicavel" routerLink="/home"
@@ -20,10 +20,10 @@
 			<div class="dropdown-center">
 				<img data-bs-toggle="dropdown" aria-expanded="false" (error)="errorImage($event)" class="img-perfil-link icon-nav clicavel"
 					src="{{urlApi}}/api/v1/usuarios/{{usernameUsuarioAutenticado}}/imagemDoPerfil">
-				<rs-home-header-useroptions [usernameUsuarioAutenticado]="usernameUsuarioAutenticado">
-				</rs-home-header-useroptions>
+				<rs-user-options-header [usernameUsuarioAutenticado]="usernameUsuarioAutenticado">
+				</rs-user-options-header>
 			</div>
 		</nav>
 	</div>
 </header>
-<rs-home-newpublicacao></rs-home-newpublicacao>
+<rs-newpublicacao></rs-newpublicacao>

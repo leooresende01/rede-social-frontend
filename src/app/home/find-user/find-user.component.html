@@ -1,5 +1,5 @@
 <div class="card-pesquisa">
-	<rs-home-shared-spinnerloading [elementoAguardado]="usuarios"></rs-home-shared-spinnerloading>
+	<rs-spinnerloading [elementoAguardado]="usuarios"></rs-spinnerloading>
 	<div *ngFor="let usuario of usuarios" (click)="irParaOUsuarioSelecionado(usuario.username)">
 		<div *ngIf="usuario.username !== usuarioAutenticadoUsername" class="seguidores">
 			<div class="seguidor-info">

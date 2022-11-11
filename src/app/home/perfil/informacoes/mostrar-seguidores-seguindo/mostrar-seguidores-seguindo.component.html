@@ -6,7 +6,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #btnClose></button>
 			</div>
 			<div class="modal-body tamanho-maximo">
-				<rs-home-shared-spinnerloading [elementoAguardado]="seguidoresOuSeguindos"></rs-home-shared-spinnerloading>
+				<rs-spinnerloading [elementoAguardado]="seguidoresOuSeguindos"></rs-spinnerloading>
 				<div *ngFor="let seguidorOuSeguindo of seguidoresOuSeguindos" class="seguidores">
 					<div class="seguidor-info clicavel" (click)="irParaOPerfilDoUsuario(seguidorOuSeguindo.username)">
 						<img class="img-perfil" (error)="errorImage($event)"
@@ -16,12 +16,12 @@
 							<p class="menor">{{ seguidorOuSeguindo.nomeCompleto | formatarNomeDoUsuario }}</p>
 						</div>
 					</div>
-					<rs-home-perfil-informacoes-botoesseguir [usuario]="seguidorOuSeguindo"
-						[usernameUsuarioAutenticado]="usernameUsuarioAutenticado"></rs-home-perfil-informacoes-botoesseguir>
+					<rs-botoes-seguir [usuario]="seguidorOuSeguindo"
+						[usernameUsuarioAutenticado]="usernameUsuarioAutenticado"></rs-botoes-seguir>
 				</div>
 				<p class="text-center mostrar-mais" *ngIf="seguidoresOuSeguindos && !estaBuscandoAlgumSeguidor && !ultimaPagina" (click)="buscarMaisSeguidoresOuSeguindo()">Ver mais</p>
-				<rs-home-shared-spinnerloading [elementoAguardado]="!estaBuscandoAlgumSeguidor"></rs-home-shared-spinnerloading>
-			</div>
+				<rs-spinnerloading [elementoAguardado]="!estaBuscandoAlgumSeguidor"></rs-spinnerloading>
+			</div> 
 		</div>
 	</div>
 </div>

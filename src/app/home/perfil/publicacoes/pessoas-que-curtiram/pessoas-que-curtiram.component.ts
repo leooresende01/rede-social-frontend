@@ -7,7 +7,7 @@ import { Publicacao } from 'src/model/publicacao';
 import { Curtida } from './../../../../../model/curtida';
 
 @Component({
-	selector: 'rs-home-perfil-publicacoes-pessoasquecurtiram',
+	selector: 'rs-pessoas-que-curtiram',
 	templateUrl: './pessoas-que-curtiram.component.html',
 	styleUrls: ['./pessoas-que-curtiram.component.css']
 })

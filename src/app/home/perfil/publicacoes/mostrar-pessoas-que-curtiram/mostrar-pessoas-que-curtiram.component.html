@@ -6,7 +6,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #btnClose></button>
 			</div>
 			<div class="modal-body tamanho-maximo">
-				<rs-home-shared-spinnerloading [elementoAguardado]="curtidas"></rs-home-shared-spinnerloading>
+				<rs-spinnerloading [elementoAguardado]="curtidas"></rs-spinnerloading>
 				<div *ngFor="let curtida of curtidas" class="seguidores">
 					<div class="seguidor-info clicavel" (click)="irParaOPerfilDoUsuario(curtida.curtidor)">
 						<img class="img-perfil" (error)="errorImage($event)"

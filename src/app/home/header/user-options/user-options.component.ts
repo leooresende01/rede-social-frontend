@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { UserAuthenticateService } from 'src/core/service/user-authenticate.service';
 
 @Component({
-	selector: 'rs-home-header-useroptions',
+	selector: 'rs-user-options-header',
 	templateUrl: './user-options.component.html',
 	styleUrls: ['./user-options.component.css']
 })

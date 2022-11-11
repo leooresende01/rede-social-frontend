@@ -13,7 +13,7 @@
 					<label for="nomeCompleto">Nome completo</label>
 				</div>
 			</fieldset>
-			<rs-index-signup-validators [formGroup]="formGroup" inputName="nome"></rs-index-signup-validators>
+			<rs-validators [formGroup]="formGroup" inputName="nome"></rs-validators>
 			<fieldset class="input-group has-validation">
 				<span class="input-group-text">@</span>
 				<div [ngClass]="{'is-invalid': formGroup.get('username')?.errors && submitedForm }"
@@ -25,7 +25,7 @@
 					<label for="username">Nome de usuário</label>
 				</div>
 			</fieldset>
-			<rs-index-signup-validators [formGroup]="formGroup" inputName="username"></rs-index-signup-validators>
+			<rs-validators [formGroup]="formGroup" inputName="username"></rs-validators>
 			<fieldset class="form-floating">
 				<input
 					[ngClass]="{'is-invalid': formGroup.get('password')?.errors && submitedForm, 'is-valid': !formGroup.get('password')?.errors && submitedForm  }"
@@ -33,7 +33,7 @@
 					#password>
 				<label for="password">Senha</label>
 			</fieldset>
-			<rs-index-signup-validators [formGroup]="formGroup" inputName="password"></rs-index-signup-validators>
+			<rs-validators [formGroup]="formGroup" inputName="password"></rs-validators>
 			<button type="button" (click)="inputFile.click()" class="btn"
 				[ngClass]="{'btn-secondary': !inputFile.value, 'btn-success': inputFile.value}">Imagem do
 				perfil</button>

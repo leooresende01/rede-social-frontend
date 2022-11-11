@@ -7,7 +7,7 @@ import { Usuario } from 'src/model/usuario';
 import { UsuarioUtil } from 'src/core/util/usuario.util';
 
 @Component({
-	selector: 'rs-home-finduser',
+	selector: 'rs-finduser',
 	templateUrl: './find-user.component.html',
 	styleUrls: ['./find-user.component.css']
 })

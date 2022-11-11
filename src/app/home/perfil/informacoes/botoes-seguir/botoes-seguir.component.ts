@@ -8,7 +8,7 @@ import { SeguidoresSeguindoUtil } from '../../../../../core/util/seguidores-segu
 import { AlertType } from '../../../../../model/alert-type';
 
 @Component({
-	selector: 'rs-home-perfil-informacoes-botoesseguir',
+	selector: 'rs-botoes-seguir',
 	templateUrl: './botoes-seguir.component.html',
 	styleUrls: ['./botoes-seguir.component.css']
 })

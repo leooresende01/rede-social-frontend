@@ -13,7 +13,7 @@ import { MostrarSeguidoresSeguindoComponent } from './mostrar-seguidores-seguind
 @NgModule({
 	declarations: [InformacoesComponent, SeguindoComponent, SeguidoresComponent, BotoesSeguirComponent, MostrarSeguidoresSeguindoComponent],
 	imports: [RouterModule, CommonModule, ReactiveFormsModule, PipeModule, SharedModule],
-	exports: [InformacoesComponent]
+	exports: [InformacoesComponent, BotoesSeguirComponent]
 })
 export class InformacoesModule {
 

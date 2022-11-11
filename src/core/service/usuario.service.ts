@@ -1,3 +1,4 @@
+import { Paginacao } from 'src/model/paginacao';
 import { UsuarioUtil } from './../util/usuario.util';
 import { UserAuthenticateService } from './user-authenticate.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -15,7 +16,14 @@ export class UsuarioService {
 	
 	constructor(private http: HttpClient,
 		private userAuthenticateService: UserAuthenticateService) { }
-		
+
+	buscarUsuarios(pagina: number): Observable<Paginacao> {
+		const params = new HttpParams()
+			.set('pagina', pagina)
+			.set('quantidade', this.quantidadeDeUsuarioBuscado);
+		return this.http.get<Paginacao>(`${urlApi}${this.pathApi}`, {params});
+	}
+
 	registrarUsuario(registroForm: RegistroForm): Observable<any> {
 		const formData = UsuarioUtil.pegarFormData(registroForm);
 		return this.http.post<any>(`${urlApi}${this.pathApi}`, formData, {

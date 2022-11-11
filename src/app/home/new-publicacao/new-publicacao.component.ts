@@ -9,7 +9,7 @@ import { AlertService } from '../../../core/observable/alert.service';
 import { PublicacaoService } from './../../../core/service/publicacao.service';
 
 @Component({
-	selector: 'rs-home-newpublicacao',
+	selector: 'rs-newpublicacao',
 	templateUrl: './new-publicacao.component.html',
 	styleUrls: ['./new-publicacao.component.css', '../../index/shared/index.style.css']
 })

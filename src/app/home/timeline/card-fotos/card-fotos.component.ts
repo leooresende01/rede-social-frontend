@@ -7,7 +7,7 @@ import { AtualizarComentariosService } from '../../../../core/observable/atualiz
 import { ComentarioService } from './../../../../core/service/comentario.service';
 
 @Component({
-	selector: 'rs-home-timeline-card-fotos',
+	selector: 'rs-card-fotos',
 	templateUrl: './card-fotos.component.html',
 	styleUrls: ['../../perfil/publicacoes/publicacoes.component.css', './card-fotos.component.css']
 })

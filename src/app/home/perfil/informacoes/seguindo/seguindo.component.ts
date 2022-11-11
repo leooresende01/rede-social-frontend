@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Paginacao } from 'src/model/paginacao';
 
 @Component({
-	selector: 'rs-home-perfil-seguindo',
+	selector: 'rs-seguindo',
 	templateUrl: './seguindo.component.html',
 	styleUrls: ['./seguindo.component.css', '../seguidores/seguidores.component.css']
 })

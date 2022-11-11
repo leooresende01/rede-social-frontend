@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'rs-home-shared-spinnerloading',
+	selector: 'rs-spinnerloading',
 	templateUrl: './spinner-loading.component.html',
 	styleUrls: ['./spinner-loading.component.css']
 })

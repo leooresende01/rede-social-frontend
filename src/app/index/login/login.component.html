@@ -12,7 +12,7 @@
 					<label for="username">Nome de usuário</label>
 				</div>
 			</fieldset>
-			<rs-index-signup-validators [formGroup]="form" inputName="username"></rs-index-signup-validators>
+			<rs-validators [formGroup]="form" inputName="username"></rs-validators>
 			<fieldset class="form-floating">
 				<input
 					[ngClass]="{'is-invalid': form.get('password')?.errors && submitedForm, 'is-valid': !form.get('password')?.errors && submitedForm  }"
@@ -20,7 +20,7 @@
 					placeholder="Password">
 				<label for="password">Senha</label>
 			</fieldset>
-			<rs-index-signup-validators [formGroup]="form" inputName="password"></rs-index-signup-validators>
+			<rs-validators [formGroup]="form" inputName="password"></rs-validators>
 			<input [routerLink]="['home']" [disabled]="form.invalid" class="form-submit clicavel" type="submit"
 				value="Entrar">
 			<p class="err-server">{{ serverMessage }}</p>

@@ -1,12 +1,12 @@
 <div *ngIf="usernameUsuarioAutenticado !== usuario.username">
 	<div *ngIf="!usuario.ehSeguidoPeloUsuarioAutenticado">
 		<button *ngIf="!usuario.segueOUsuarioAutenticado" (click)="seguirUsuario($event)" type="button"
-			class="btn btn-primary btn-sm">Seguir</button>
+			class="btn btn-primary btn-sm botao-texto">Seguir</button>
 		<button *ngIf="usuario.segueOUsuarioAutenticado" (click)="seguirUsuario($event)" type="button"
-			class="btn btn-primary btn-sm">Seguir de volta</button>
+			class="btn btn-primary btn-sm botao-texto">Seguir de volta</button>
 	</div>
 	<button *ngIf="usuario.ehSeguidoPeloUsuarioAutenticado" (click)="deixarDeSeguir($event)" type="button"
-		class="btn btn-outline-secondary text-black btn-sm">Deixar de seguir</button>
+		class="btn btn-outline-secondary text-black btn-sm botao-texto">Deixar de seguir</button>
 	<div #elementoLoanding>
 	</div>
 </div>

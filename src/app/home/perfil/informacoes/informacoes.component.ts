@@ -11,7 +11,7 @@ import { Usuario } from 'src/model/usuario';
 import { urlApi } from 'src/core/util/url-api';
 
 @Component({
-	selector: 'rs-home-perfil-informacoes',
+	selector: 'rs-informacoes',
 	templateUrl: './informacoes.component.html',
 	styleUrls: ['./informacoes.component.css']
 })
