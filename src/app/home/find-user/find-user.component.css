@@ -72,7 +72,7 @@
 	font-weight: 500;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
 	.card-pesquisa {
 		position: absolute;
 		top: 100%;

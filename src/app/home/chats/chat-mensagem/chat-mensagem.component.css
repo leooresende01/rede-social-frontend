@@ -1,0 +1,176 @@
+.card-chat {
+	padding: 30px 30vw;
+}
+
+.card-topo {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid var(--cor-de-fundo);
+}
+
+.card-topo>h3 {
+	font-size: 25px;
+}
+
+.chat-com-usuarios {
+	background-color: white;
+	border: 1px solid var(--cor-de-fundo);
+	border-radius: 5px;
+	width: 100%;
+}
+
+.info-usuario-chat {
+	column-gap: 10px;
+	padding: 0 5px 0 20px;
+	flex-grow: 1;
+}
+
+.espaco-msg {
+	padding: 10px;
+}
+
+.espaco-msg-foto {
+	column-gap: 5px;
+}
+
+.img-perfil {
+	width: 45px;
+	height: 45px;
+	border-radius: 35px;
+}
+
+.header-modal-align {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.chats {
+	padding: 10px 15px;
+	overflow: auto;
+	height: 55vh;
+}
+
+.card {
+	border: none;
+	border-radius: 15px;
+}
+
+.form-control {
+	border-radius: 12px;
+	border: 1px solid #F0F0F0;
+	font-size: 8px;
+}
+
+.form-control:focus {
+	box-shadow: none;
+}
+
+.form-control::placeholder {
+	font-size: 8px;
+	color: #C4C4C4;
+}
+
+.formulario-comentario {
+	margin-top: 15px;
+	border-top: 1px solid rgb(0 0 0 / 13%);
+}
+
+.formulario-comentario {
+	display: flex;
+}
+
+.form-control {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-left: none;
+	border-bottom: none;
+}
+
+.texto-input {
+	font-size: 16px;
+}
+
+.texto-input::placeholder {
+	font-size: 16px;
+}
+
+.top-40 {
+	top: 40%;
+}
+
+@media screen and (max-width: 1024px) {
+	.card-chat {
+		padding: 30px 15vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.card-chat {
+		padding: 0;
+	}
+
+	.chats {
+		overflow: auto;
+		height: calc(100vh - 150px);
+		max-height: none;
+		min-height: none;
+		padding: 20px 15px 50px 15px;
+	}
+
+	.chat-com-usuarios {
+		background-color: white;
+		border: none;
+		border-radius: 0;
+		width: 100%;
+	}
+
+	.chat-username-usuario {
+		font-size: 15px;
+	}
+
+	.chat-ultima-mensagem {
+		font-size: 11px;
+	}
+
+	.horario-envio-mensagem {
+		font-size: 9px;
+	}
+
+	.enviar-mensagens {
+		position: absolute;
+		background-color: white;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.card-topo {
+		padding: 20px 0;
+		text-align: center;
+		border-bottom: 1px solid var(--cor-de-fundo);
+	}
+
+	.menor {
+		font-size: 11px;
+	}
+
+	.chat-username-usuario {
+		font-size: 11px;
+	}
+
+	.chat-ultima-mensagem {
+		font-size: 10px;
+	}
+
+	.horario-envio-mensagem {
+		font-size: 8px;
+	}
+}
+
+
+
+

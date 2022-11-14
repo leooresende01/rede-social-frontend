@@ -56,9 +56,9 @@
 	border-radius: 15px;
 }
 
-@media screen and (max-width: 563px) {
+@media screen and (max-width: 650px) {
 	.home-header {
-		padding: 0;
+		padding: 0 5px;
 		column-gap: 10px;
 	}
 
@@ -68,7 +68,7 @@
 
 	.home-header-nav {
 		display: flex;
-		column-gap: 25px;
+		column-gap: 4.5vw;
 		align-items: center;
 	}
 

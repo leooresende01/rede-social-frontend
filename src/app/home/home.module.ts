@@ -1,5 +1,7 @@
+import { DiretivaModule } from 'src/core/directive/diretiva.module';
 import { NgModule } from "@angular/core";
 import { RouterModule } from '@angular/router';
+import { ChatModule } from "./chats/chat.module";
 import { EditUserModule } from "./edit-user/edit-user.module";
 import { HeaderModule } from './header/header.module';
 import { HomeComponent } from "./home.component";
@@ -11,7 +13,7 @@ import { TimelineModule } from './timeline/timeline.module';
 @NgModule({
 	declarations: [HomeComponent],
 	exports: [HomeComponent],
-	imports: [RouterModule, PerfilModule, InformacoesModule, TimelineModule, HeaderModule, SharedModule, EditUserModule]
+	imports: [RouterModule, DiretivaModule, ChatModule, PerfilModule, InformacoesModule, TimelineModule, HeaderModule, SharedModule, EditUserModule]
 }) 
 export class HomeModule {
 

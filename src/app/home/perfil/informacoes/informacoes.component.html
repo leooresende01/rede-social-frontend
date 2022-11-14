@@ -26,5 +26,6 @@
 		<div class="informacao-nome">
 			<p class="nome-completo">{{ usuario.nomeCompleto }}</p>
 		</div>
+		<a *ngIf="usuario.ehSeguidoPeloUsuarioAutenticado" class="btn btn-primary btn-sm botao-texto mt-3" [routerLink]="['/home', 'chats', usuario.username]" role="button">Enviar mensagem</a>
 	</div>
 </div>

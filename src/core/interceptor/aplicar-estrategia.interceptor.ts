@@ -1,10 +1,24 @@
-import { outCred, inCred } from '../util/cred.util';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import * as crypto from "crypto-js";
 import { filter, map, Observable } from "rxjs";
+import { inCred, outCred } from '../util/cred.util';
 import { urlApi } from '../util/url-api';
 
+function ehUmJsonValido(str: string): boolean {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+@Injectable({providedIn: 'root'})
 export class AplicarEstrategiaInterceptor implements HttpInterceptor {
+
+	constructor(private router: Router) {}
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		const url = req.url.replace(urlApi, '');
@@ -15,13 +29,15 @@ export class AplicarEstrategiaInterceptor implements HttpInterceptor {
 			return this.aplicarEstrategias(next.handle(requestCryptoClone));
 
 		}
-		if (metodoHttp === "DELETE") {
+		if (metodoHttp === "DELETE" || (!ehUmJsonValido(req.body) && this.router.url !== '/home/editarInformacoes')) {
 			return next.handle(req);
-		} return this.aplicarEstrategias(next.handle(req));
+		}
+		return this.aplicarEstrategias(next.handle(req));
 	}
 
 	private verificaAUrl(url: string): boolean {
 		return url !== '/api/v1/usuarios' &&
+			!new RegExp('chats').test(url) &&
 			!new RegExp('/api/v1/usuarios/[A-Za-z0-9\.]+/publicacoes$').test(url) &&
 			!new RegExp('/api/v1/usuarios/[A-Za-z0-9\.]+$').test(url)
 	}

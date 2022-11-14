@@ -10,15 +10,22 @@
 				*ngIf="elementActive && !formGroup.get('query')?.hasError('required')"></rs-finduser>
 		</div>
 		<nav class="header-espaco-interno home-header-nav">
-			<img *ngIf="url === '/home'; else imagemAlternativa" class="icon-nav clicavel" routerLink="/home"
+			<img *ngIf="url === '/home'; else imagemHomeAlternativa" class="icon-nav clicavel"
 				src="https://cdn1.iconfinder.com/data/icons/material-core/20/home-256.png">
-			<ng-template #imagemAlternativa><img class="icon-nav clicavel" routerLink="/home"
+			<ng-template #imagemHomeAlternativa>
+				<img routerLink="/home" class="icon-nav clicavel"
 					src="https://cdn2.iconfinder.com/data/icons/app-user-interface-6/48/Home_Alt-256.png">
+			</ng-template>
+			<img *ngIf="url === '/home/chats'; else imagemChatsAlternativa" class="icon-nav clicavel"
+				src="https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_message_48px-512.png">
+			<ng-template #imagemChatsAlternativa><img routerLink="/home/chats" class="icon-nav clicavel"
+					src="https://cdn1.iconfinder.com/data/icons/iconoir-vol-3/24/message-text-512.png">
 			</ng-template>
 			<img data-bs-toggle="modal" data-bs-target="#novaPublicacaoModal" class="icon-nav clicavel"
 				src="https://cdn2.iconfinder.com/data/icons/boxicons-regular-vol-1/24/bx-add-to-queue-256.png">
 			<div class="dropdown-center">
-				<img data-bs-toggle="dropdown" aria-expanded="false" (error)="errorImage($event)" class="img-perfil-link icon-nav clicavel"
+				<img data-bs-toggle="dropdown" aria-expanded="false" (error)="errorImage($event)"
+					class="img-perfil-link icon-nav clicavel"
 					src="{{urlApi}}/api/v1/usuarios/{{usernameUsuarioAutenticado}}/imagemDoPerfil">
 				<rs-user-options-header [usernameUsuarioAutenticado]="usernameUsuarioAutenticado">
 				</rs-user-options-header>

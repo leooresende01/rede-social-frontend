@@ -13,7 +13,7 @@ import { urlApi } from 'src/core/util/url-api';
 @Component({
 	selector: 'rs-informacoes',
 	templateUrl: './informacoes.component.html',
-	styleUrls: ['./informacoes.component.css']
+	styleUrls: ['./informacoes.component.css', './botoes-seguir/botoes-seguir.component.css']
 })
 export class InformacoesComponent implements OnInit, OnDestroy {
 	public urlApi: string = urlApi;

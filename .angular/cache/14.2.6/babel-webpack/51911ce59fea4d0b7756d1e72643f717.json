@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class MensagemForm {\n  constructor(mensagem, sendTo, token) {\n    this.mensagem = mensagem;\n    this.sendTo = sendTo;\n    this.token = token;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,36 @@
+<div class="card-chat">
+	<div class="chat-com-usuarios">
+		<div class="card-topo">
+			<button type="button" class="btn-close" aria-label="Close" [routerLink]="['/home', 'chats']"></button>
+			<div class="d-flex align-items-center py-1 info-usuario-chat">
+				<div>
+					<img (error)="errorImage($event)"
+						src="{{urlApi}}/api/v1/usuarios/{{outroUsuarioDoChat}}/imagemDoPerfil"
+						class="rounded-circle mr-1" [attr.alt]="outroUsuarioDoChat" width="40" height="40">
+				</div>
+				<div class="flex-grow-1 pl-3 text-start">
+					<strong>{{outroUsuarioDoChat}}</strong>
+				</div>
+				<div>
+					<button class="btn btn-light border btn-lg px-3" [routerLink]="['/home', outroUsuarioDoChat]">Ver
+						perfil</button>
+				</div>
+			</div>
+		</div>
+		<div class="chats position-relative" #chatArea>
+			<rs-spinnerloading class="position-absolute start-0 end-0 top-40" [elementoAguardado]="mensagens"></rs-spinnerloading>
+			<h3 class="text-center position-absolute top-50 start-0 end-0" *ngIf="mensagens && !mensagens?.length">Envie uma mensagem</h3>
+			<div *ngFor="let mensagem of mensagens">
+				<rs-mensagens [usuarioAuthenticadoUsername]="usuarioAuthenticadoUsername" [mensagem]="mensagem">
+				</rs-mensagens>
+			</div>
+		</div>
+		<div class="flex-grow-0 border-top enviar-mensagens">
+			<form [formGroup]="formGroup" class="input-group" (submit)="enviarMensagem()">
+				<input formControlName="mensagem" type="text" class="form-control texto-input"
+					placeholder="Digite uma mensagem">
+				<button [disabled]="formGroup.invalid || !mensagens" type="submit" class="btn btn-primary">Enviar</button>
+			</form>
+		</div>
+	</div>
+</div>

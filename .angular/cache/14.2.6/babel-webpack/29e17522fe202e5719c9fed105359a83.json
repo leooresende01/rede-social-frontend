@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class ComentarioDto {\n  constructor(comentario) {\n    this.comentario = comentario;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

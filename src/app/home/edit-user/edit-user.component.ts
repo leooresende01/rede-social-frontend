@@ -62,12 +62,12 @@ export class EditUserComponent implements OnInit, OnDestroy {
 
 	atualizarInformacoesUsuario(usuarioAtualizado: Usuario): void {
 		this.loginService.atualizarToken()
-		.subscribe(loginDto => { 
+			.subscribe(loginDto => {
 				this.alertService.nextValue(new Alert('Usuario atualizado com sucesso', AlertType.SUCCESS));
 				this.userAuthService.salvarLoginDto(loginDto);
 				this.router.navigate(['/home', usuarioAtualizado.username], { replaceUrl: true });
 			});
-	} 
+	}
 
 	pegarValorDoInput(inputName: string): string {
 		return this.formGroup.get(inputName)?.value;

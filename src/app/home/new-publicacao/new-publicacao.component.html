@@ -14,7 +14,7 @@
 						type="file" id="inputValue" #inputFile>
 					<img class="img-publi" *ngIf="inputFile.value" src="inputFile.value" #img />
 					<div *ngIf="!formGroup.invalid" class="mb-3 legenda-input">
-						<textarea maxlength="50" placeholder="Legenda da publicação" class="form-control" rows="3" #legenda></textarea>
+						<textarea maxlength="150" placeholder="Legenda da publicação" class="form-control" rows="3" #legenda></textarea>
 					  </div>
 					<input [disabled]="formGroup.invalid" class="form-submit clicavel" type="submit"
 						value="Publicar">

@@ -36,7 +36,10 @@ export class MostrarUsuariosAleatoriosComponent implements OnInit, OnDestroy {
 		
 		ngOnInit(): void {
 			this.usuarioService.buscarUsuarios(this.paginaAtual)
-			.subscribe(usuarios => this.usuarios = usuarios.content as Array<Usuario>);
+			.subscribe(usuariosPage => { 
+				this.usuarios = usuariosPage.content as Array<Usuario>;
+				this.ultimaPagina = usuariosPage.last;
+			});
 			this.usernameUsuarioAutenticado = this.userAuthService.pegarUsernameUsuarioAutenticado();
 	}
 	

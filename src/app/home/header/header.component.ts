@@ -10,7 +10,7 @@ import { Usuario } from 'src/model/usuario';
 import { UsuarioUtil } from './../../../core/util/usuario.util';
 
 @Component({
-	selector: 'rs-home-header',
+	selector: 'rs-header',
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.css']
 })

@@ -1,0 +1,40 @@
+<div class="card-chat">
+	<div class="chat-com-usuarios">
+		<div class="card-topo">
+			<h3>Chats abertos</h3>
+		</div>
+		<div class="chats">
+			<h3 class="nao-encontrado-mensagem" *ngIf="!chats.length">Nenhum chat encontrado</h3>
+			<div *ngFor="let chat of chats" [routerLink]="['/home', 'chats', chat.quemOUsuarioAutenticadoEstaConversando ]" class="chat-mensagens">
+				<div *ngIf="chat.ultimaMensagem" class="chat-info">
+					<img class="img-perfil clicavel" (error)="errorImage($event)"
+						src="{{urlApi}}/api/v1/usuarios/{{chat.quemOUsuarioAutenticadoEstaConversando}}/imagemDoPerfil">
+					<div class="info-mensagem">
+						<p [ngClass]="{'destacar-pp chat-username-usuario-menor': !chat.ultimaMensagem.foiVista}"
+							class="chat-username-usuario">{{
+							chat.quemOUsuarioAutenticadoEstaConversando }}
+						</p>
+						<div>
+							<p [ngClass]="{'destacar-pp': !chat.ultimaMensagem.foiVista}"
+								*ngIf="chat.ultimaMensagem && chat.ultimaMensagem.emissor !== usuarioAuthenticadoUsername"
+								class="chat-ultima-mensagem">
+								<span [ngClass]="{'destacar-pp': !chat.ultimaMensagem.foiVista}" class="destacar">{{
+									chat.ultimaMensagem.emissor}}: </span>
+								{{chat.ultimaMensagem.mensagem | formatarNomeDoUsuario}}
+							</p>
+							<p *ngIf="chat.ultimaMensagem && chat.ultimaMensagem.emissor === usuarioAuthenticadoUsername"
+								class="chat-ultima-mensagem">
+								<span class="destacar">Você: </span>
+								{{chat.ultimaMensagem.mensagem | formatarNomeDoUsuario}}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div *ngIf="chat.ultimaMensagem" class="info-msg">
+					<p [ngClass]="{'ocutar': chat.ultimaMensagem.foiVista}" class="pontinho-msg-nao-vista">•</p>
+					<p [ngClass]="{'destacar-pp': !chat.ultimaMensagem.foiVista}" class="horario-envio-mensagem">{{
+						chat.ultimaMensagem.dataSemFormatar | formatarData }}</p>
+				</div>
+			</div>
+		</div>
+	</div>

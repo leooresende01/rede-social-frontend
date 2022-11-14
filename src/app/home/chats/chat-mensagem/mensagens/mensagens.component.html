@@ -1,0 +1,20 @@
+<div *ngIf="mensagem.emissor !== usuarioAuthenticadoUsername" class="media mb-3 mensagem-recebida">
+	<div class="media-body ml-3 mansagem-outro-usuario">
+		<div class="d-flex flex-start">
+			<div class="bg-light border rounded mr-2 p-3"><span class="text-muted">{{mensagem.mensagem}}</span>
+			</div>
+		</div>
+		<p class="small text-muted horario-de-envio horario-mensagem-recebida">{{mensagem.dataSemFormatar | formatarData}}</p>
+	</div>
+</div>
+
+
+<div *ngIf="mensagem.emissor === usuarioAuthenticadoUsername" class="media ml-auto mb-3 mensagem-enviada">
+	<div class="media-body mensagem-usuario-autenticado">
+		<div class="d-flex flex-end">
+			<div class="bg-primary rounded mr-2 p-3"><span class="text-white">{{mensagem.mensagem}}</span>
+			</div>
+		</div>
+		<p class="small text-muted horario-de-envio horario-mensagem-enviada">{{mensagem.dataSemFormatar | formatarData}}</p>
+	</div>
+</div>

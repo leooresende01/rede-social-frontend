@@ -4,8 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/core/service/usuario.service';
 import { Alert } from 'src/model/alert';
-import { RegistroForm } from './../../../core/dto/registro.dto';
 import { AlertService } from '../../../core/observable/alert.service';
+import { RegistroForm } from './../../../core/dto/registro.dto';
 import { AlertType } from './../../../model/alert-type';
 
 @Component({
@@ -18,6 +18,7 @@ export class SignupComponent implements OnInit {
 	public serverMessage: string;
 	public progressoSubmit: number;
 	public submitedForm: boolean;
+	public isSubmit: boolean;
 
 	@ViewChild('inputFile')
 	public elemento: ElementRef<HTMLInputElement>;
@@ -37,6 +38,10 @@ export class SignupComponent implements OnInit {
 
 	registrarUsuario(): void {
 		this.serverMessage = '';
+		if (this.isSubmit) {
+			return;
+		}
+		this.isSubmit = true;
 		const nomeCompleto = this.pegarValorDoInput('nome');
 		const username = this.pegarValorDoInput('username');
 		const password = this.pegarValorDoInput('password');
@@ -45,10 +50,14 @@ export class SignupComponent implements OnInit {
 		
 		const registroForm = new RegistroForm(nomeCompleto, username, password, imagemDoPerfil);
 		this.usuarioService.registrarUsuario(registroForm)
-			.subscribe(event => this.irParaATelaDeLogin(event), (err) => this.serverMessage = err.error.mensagem);
+			.subscribe(event => this.atualizarProgressoEIrParaATelaDeLogin(event), (err) => { 
+				this.serverMessage = err.error.mensagem;
+				this.isSubmit = false;
+			});
 	}
 	
-	irParaATelaDeLogin(event: any): void {
+	atualizarProgressoEIrParaATelaDeLogin(event: any): void {
+		console.log('Progresso');
 		if (event.type === HttpEventType.Response) {
 			this.alertService.nextValue(new Alert('Usuario cadastrado com sucesso', AlertType.SUCCESS));
 			this.router.navigate(['/']);

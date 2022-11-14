@@ -1,0 +1,190 @@
+.card-chat {
+	padding: 30px 30vw;
+}
+
+.card-topo {
+	padding: 20px 0;
+	text-align: center;
+	border-bottom: 1px solid var(--cor-de-fundo);
+}
+
+.card-topo>h3 {
+	font-size: 25px;
+}
+
+.chat-com-usuarios {
+	background-color: white;
+	border: 1px solid var(--cor-de-fundo);
+	border-radius: 5px;
+	width: 100%;
+}
+
+.header-modal-align {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.chats {
+	overflow: auto;
+	min-height: 80px;
+	max-height: 60vh;
+}
+
+.centralizado {
+	grid-column: 2;
+	justify-self: center;
+}
+
+.nao-encontrado-mensagem {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.chat-username-usuario {
+	display: flex;
+	font-size: 18px;
+	justify-content: space-between;
+	padding-right: 10px;
+}
+
+.chat-username-usuario-menor {
+	font-size: 16px;
+}
+
+.chat-mensagens {
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	column-gap: 5px;
+}
+
+.chat-mensagens:hover {
+	background-color: aliceblue;
+	cursor: pointer;
+}
+
+.chat-info {
+	display: flex;
+	column-gap: 15px;
+	align-items: center;
+}
+
+.chat-ultima-mensagem {
+	font-size: 14px;
+}
+
+.destacar {
+	font-weight: 500;
+}
+
+.img-perfil {
+	width: 60px;
+	height: 60px;
+	border-radius: 45px;
+}
+
+.info-mensagem {
+	display: flex;
+	flex-direction: column;
+	row-gap: 7px;
+}
+
+.menor {
+	font-size: 14px;
+}
+
+.mostrar-mais:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.info-msg {
+	display: flex;
+	flex-direction: column;
+}
+
+.pontinho-msg-nao-vista {
+	color: rgb(0, 149, 246);
+	justify-self: center;
+	align-self: flex-end;
+	font-size: 40px;
+}
+
+.destacar-pp {
+	font-weight: 600;
+}
+
+
+.ocutar {
+	visibility: hidden;
+}
+
+.horario-envio-mensagem {
+	font-size: 10px;
+	justify-self: flex-end;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+	.card-chat {
+		padding: 30px 15vw;
+	}
+
+}
+
+@media screen and (max-width: 557px) {
+	.card-chat {
+		padding: 0;
+	}
+
+	.chats {
+		overflow: auto;
+		height: calc(100vh - 130px);
+		max-height: none;
+		min-height: none;
+	}
+
+	.chat-com-usuarios {
+		background-color: white;
+		border: none;
+		border-radius: 0;
+		width: 100%;
+	}
+
+	.chat-username-usuario {
+		font-size: 15px;
+	}
+
+	.chat-ultima-mensagem {
+		font-size: 11px;
+	}
+
+	.horario-envio-mensagem {
+		font-size: 9px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.card-topo {
+		padding: 20px 0;
+		text-align: center;
+		border-bottom: 1px solid var(--cor-de-fundo);
+	}
+	.menor {
+		font-size: 11px;
+	}
+
+	.chat-username-usuario {
+		font-size: 11px;
+	}
+
+	.chat-ultima-mensagem {
+		font-size: 10px;
+	}
+
+	.horario-envio-mensagem {
+		font-size: 8px;
+	}
+}
