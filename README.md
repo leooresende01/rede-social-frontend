@@ -11,7 +11,7 @@
 
 ---
 ## Observações:
-- Essa aplicação não é focada em UX/UI, e sim no uso das funcionalidades do framework Angular
+- Essa aplicação não é focada em UX/UI, e sim no uso das funcionalidades do framework Angular com o visual pensado principalmente pra mobile
 ---
 ## Extras:
 - [Aplicação back-end (Source)](https://github.com/leooresende01/rede-social-api)
