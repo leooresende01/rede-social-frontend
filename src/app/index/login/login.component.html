@@ -5,7 +5,7 @@
 			<fieldset class="input-group has-validation">
 				<span class="input-group-text">@</span>
 				<div [ngClass]="{'is-invalid': form.get('username')?.errors && submitedForm }" class="form-floating">
-					<input focus id="inputUsername"
+					<input id="inputUsername"
 						[ngClass]="{'is-invalid': form.get('username')?.errors && submitedForm, 'is-valid': !form.get('username')?.errors && submitedForm }"
 						formControlName="username" type="text" class="form-control" id="username" placeholder="username"
 						required>

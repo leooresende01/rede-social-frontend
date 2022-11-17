@@ -80,6 +80,7 @@ export class ChatMensagemComponent implements OnInit, OnDestroy {
 	}
 
 	enviarMensagem(): void {
+		setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
 		const mensagem = this.formGroup.get('mensagem')?.value;
 		const mensagemDto = this.mensagemService.enviarMensagem(mensagem, this.outroUsuarioDoChat);
 		this.mensagens?.push(mensagemDto);

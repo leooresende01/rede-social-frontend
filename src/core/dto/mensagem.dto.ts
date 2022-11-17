@@ -1,4 +1,3 @@
-import { ChatUtil } from "../util/chat.util";
 import { MensagemForm } from "./mensagem.form";
 
 export class MensagemDto {

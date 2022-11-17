@@ -1,6 +1,6 @@
 import { PlatformLocation } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { Event, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BarraDeProgressoService } from 'src/core/observable/barra-de-progresso.service';
 import { SeguidoresSeguindoUtil } from 'src/core/util/seguidores-seguindo.util';
@@ -26,6 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private location: PlatformLocation) { }
 
 	ngOnInit(): void {
+
 		this.alertSubscription = this.alertService.getObservable()
 			.subscribe(alert => this.mostrarMensagemDeAlerta(alert));
 

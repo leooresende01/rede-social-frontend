@@ -6,7 +6,7 @@
 			<fieldset class="input-group has-validation">
 				<div [ngClass]="{'is-invalid': formGroup.get('nomeCompleto')?.errors && submitedForm }"
 					class="form-floating">
-					<input focus id="inputUsername"
+					<input id="inputUsername"
 						[ngClass]="{'is-invalid': formGroup.get('nomeCompleto')?.errors && submitedForm, 'is-valid': !formGroup.get('nomeCompleto')?.errors && submitedForm }"
 						formControlName="nome" type="text" class="form-control" id="nomeCompleto"
 						placeholder="Nome completo" required #nome>

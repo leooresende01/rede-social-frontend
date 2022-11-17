@@ -20,17 +20,17 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
 	{
 		path: '', component: IndexComponent, children: [
-			{ path: '', component: LoginComponent, canActivate: [UsuarioAutenticadoGuard], title: 'Login' },
-			{ path: 'signup', component: SignupComponent, canActivate: [UsuarioAutenticadoGuard], title: 'Cadastrar' }
+			{ path: '', component: LoginComponent, canActivate: [UsuarioAutenticadoGuard], title: 'Login', data: { animation: 'LoginAnimation' } },
+			{ path: 'signup', component: SignupComponent, canActivate: [UsuarioAutenticadoGuard], title: 'Cadastrar', data: { animation: 'CadastroAnimation' } }
 		]
 	},
 	{
 		path: 'home', component: HomeComponent, children: [
-			{ path: '', component: TimelineComponent, resolve: { publicacoes: PublicacoesTimelineResolve }, runGuardsAndResolvers: 'paramsOrQueryParamsChange', title: 'Publicações' },
-			{ path: 'editarInformacoes', component: EditUserComponent, resolve: { usuario: InformacoesUsuarioAutenticadoResolve }, title: 'Editar informações' },
-			{ path: 'chats', component: ChatsComponent, resolve: { chats: ChatsResolve }, title: 'Chats' },
-			{ path: 'chats/:username', component: ChatMensagemComponent, runGuardsAndResolvers: 'always', title: 'Chat' },
-			{ path: ':username', component: PerfilComponent, resolve: { usuario: UsuarioPerfilResolve, publicacoes: PublicacaoResolve }, runGuardsAndResolvers: 'always', title: 'Perfil' }
+			{ path: '', component: TimelineComponent, resolve: { publicacoes: PublicacoesTimelineResolve }, runGuardsAndResolvers: 'paramsOrQueryParamsChange', title: 'Publicações', data: { animation: 'PublicacoesAnimation' } },
+			{ path: 'editarInformacoes', component: EditUserComponent, resolve: { usuario: InformacoesUsuarioAutenticadoResolve }, title: 'Editar informações', data: {animation: 'EditAnimation'} },
+			{ path: 'chats', component: ChatsComponent, resolve: { chats: ChatsResolve }, title: 'Chats', data: { animation: 'ChatsAnimation' } },
+			{ path: 'chats/:username', component: ChatMensagemComponent, runGuardsAndResolvers: 'always', title: 'Chat', data: { animation: 'ChatUserAnimation' } },
+			{ path: ':username', component: PerfilComponent, resolve: { usuario: UsuarioPerfilResolve, publicacoes: PublicacaoResolve }, runGuardsAndResolvers: 'always', title: 'Perfil', data: { animation: 'PerfilAnimation' } }
 		]
 	},
 	{ path: '**', redirectTo: '/not-found' },

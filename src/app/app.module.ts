@@ -1,6 +1,7 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AplicarEstrategiaInterceptor } from './../core/interceptor/aplicar-estrategia.interceptor';
 import { IndexModule } from './index/index.module';
 
@@ -24,7 +25,8 @@ registerLocaleData(ptBr);
 		AppRoutingModule,
 		IndexModule,
 		HomeModule,
-		HttpClientModule
+		HttpClientModule,
+		BrowserAnimationsModule
 	],
 	providers: [{ provide: HTTP_INTERCEPTORS, useClass: PrograssoInterceptor, multi: true },
 	{ provide: HTTP_INTERCEPTORS, useClass: AdicionarOuAtualizarTokenInterceptor, multi: true },

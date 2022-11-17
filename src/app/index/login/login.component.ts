@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	ngOnDestroy(): void {
+		setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 1);
 		SeguidoresSeguindoUtil.desativarObservable(this.queriesParamsSubscription);
 	}
 }
