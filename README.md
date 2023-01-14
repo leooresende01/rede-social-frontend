@@ -1,6 +1,6 @@
 # Front-end rede social
 
-## Aplicação front-end que faz integração com a API rede social ([Acesso](https://rede-social.leooresende.tk/home))
+## Aplicação front-end que faz integração com a [API rede social](https://github.com/leooresende01/rede-social-api)
 ---
 ## Tecnologias Usadas:
 - [TypeScript](https://www.typescriptlang.org/docs/)
